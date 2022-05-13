@@ -1,0 +1,23 @@
+﻿<Window x:Class="BurgerHousWPF.AdminsPanelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BurgerHousWPF"
+        mc:Ignorable="d"
+        Title="AdminsPanelWindow" Height="450" Width="800">
+    <Grid Background="#FF330570">
+        <Label Content="Совершено заказов:122" HorizontalAlignment="Left" Margin="627,405,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Дата: 05.04.2022" HorizontalAlignment="Left" Margin="514,406,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14"/>
+        <StackPanel Margin="0,0,555,0" Background="#FF530FAD">
+            <TextBlock TextWrapping="Wrap" Text="Список сотрудников:" FontSize="16" Foreground="White" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <TextBlock TextWrapping="Wrap" Text="Иван Иванов (Кассир)" FontSize="14" Foreground="White" Background="#FF8243D6"/>
+            <TextBlock TextWrapping="Wrap" Text="Петр Петров (Повар)" Foreground="White" FontSize="14" Background="#FF996AD6"/>
+
+        </StackPanel>
+        <StackPanel Margin="250,0,305,0" Background="#FF530FAD">
+            <TextBlock TextWrapping="Wrap" Text="Список заказов:" Foreground="White" FontSize="16" FontWeight="Bold"/>
+            <TextBlock TextWrapping="Wrap" Text="ID:122 Стоимость: 2675 р. Дата и время заказа: 12:00 05.04.2022" Foreground="White" FontSize="14" Background="#FF8243D6"/>
+        </StackPanel>
+    </Grid>
+</Window>

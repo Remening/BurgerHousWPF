@@ -1,0 +1,114 @@
+﻿<Window x:Class="BurgerHousWPF.CatalogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BurgerHousWPF"
+        mc:Ignorable="d"
+        Title="CatalogWindow" Height="450" Width="800" Closed="Window_Closed" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF330570" Height="433.8">
+        <ListBox Background="#FF530FAD" BorderBrush="#FF330570" Foreground="White" FontSize="16" BorderThickness="1,1,0.6,1" Height="434" VerticalAlignment="Center" HorizontalAlignment="Right" Width="237" Margin="0,0,563,0">
+            <Button x:Name="burgersBtn"  FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Width="220" Click="BurgersBtn_Click" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/icons/icons8-burger-60.png" Stretch="Fill" UseLayoutRounding="False" Height="43" Width="43" />
+                    <TextBlock Padding="0" FontSize="32" VerticalAlignment="Bottom">Бургеры</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button FontSize="16" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Click="Button_Click" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/icons/icons8-french-fries-60.png" Stretch="Fill" UseLayoutRounding="False" Height="43" Width="43" />
+                    <TextBlock Padding="0" FontSize="32" VerticalAlignment="Bottom">Закуски</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button FontSize="16" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Click="Button_Click_1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/icons/icons8-cup-60.png" Stretch="Fill" UseLayoutRounding="False" Height="43" Width="43" />
+                    <TextBlock Padding="0" FontSize="32" VerticalAlignment="Bottom">Кофе и чай</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button FontSize="16" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Height="72" Click="Button_Click_2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="70">
+                    <Image Source="/icons/icons8-soda-60.png" Stretch="Fill" UseLayoutRounding="False" Height="43" Width="43" />
+                    <TextBlock Padding="0" FontSize="28" VerticalAlignment="Bottom" TextWrapping="Wrap" Width="180">Холодные напитки</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button FontSize="16" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                <StackPanel Orientation="Horizontal" Width="223">
+                    <Image Source="/icons/icons8-basket-64.png" Stretch="Fill" UseLayoutRounding="False" Height="43" Width="43"/>
+                    <TextBlock Padding="0" FontSize="32" Width="136" HorizontalAlignment="Stretch" VerticalAlignment="Center"><Run Text="Корзина"/></TextBlock>
+                    <Label x:Name="cartsLabel" FontSize="32" Background="{x:Null}" Foreground="White" Content="0" Width="26"/>
+                </StackPanel>
+            </Button>
+        </ListBox>
+        <Grid x:Name="productGrid" VerticalAlignment="Center" Height="434" ShowGridLines="false" UseLayoutRounding="False" HorizontalAlignment="Right" Width="558">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="burgersGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
+                <Button Grid.Column="0" Grid.Row="0" x:Name="cheeseburgerBtn" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109"/>
+                <Button Grid.Row="0" x:Name="cheeseburgerBtn1" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109"/>
+                <Button Grid.Row="0" x:Name="cheeseburgerBtn2" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109"/>
+                <Button Grid.Row="0" x:Name="cheeseburgerBtn3" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,0,112,109"/>
+                <Button Grid.Row="0" x:Name="cheeseburgerBtn4" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="446,0,0,109"/>
+                <Button Grid.Column="0" x:Name="cheeseburgerBtn5" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,108,446,0"/>
+                <Button x:Name="cheeseburgerBtn6" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,108,335,0"/>
+                <Button x:Name="cheeseburgerBtn7" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0"/>
+                <Button x:Name="cheeseburgerBtn8" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0"/>
+            </Grid>
+            <Grid x:Name="frenchFriesGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Collapsed">
+                <Button Grid.Column="0" Grid.Row="0" x:Name="frenchFriesBtn" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109"/>
+                <Button Grid.Row="0" x:Name="frenchFriesBtn1" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109"/>
+                <Button Grid.Row="0" x:Name="frenchFriesBtn2" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109"/>
+                <Button Grid.Row="0" x:Name="frenchFriesBtn3" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,0,112,109"/>
+                <Button Grid.Row="0" x:Name="frenchFriesBtn4" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="446,0,0,109"/>
+                <Button Grid.Column="0" x:Name="frenchFriesBtn5" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,108,446,0"/>
+                <Button x:Name="frenchFriesBtn6" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,108,335,0"/>
+                <Button x:Name="frenchFriesBtn7" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0"/>
+                <Button x:Name="frenchFriesBtn8" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0"/>
+            </Grid>
+            <Grid x:Name="cupGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Collapsed">
+                <Button Grid.Column="0" Grid.Row="0" x:Name="cupBtn" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109"/>
+                <Button Grid.Row="0" x:Name="cupBtn1" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109"/>
+                <Button Grid.Row="0" x:Name="cupBtn2" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109"/>
+                <Button Grid.Row="0" x:Name="cupBtn3" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,0,112,109"/>
+                <Button Grid.Row="0" x:Name="cupBtn4" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="446,0,0,109"/>
+                <Button Grid.Column="0" x:Name="cupBtn5" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,108,446,0"/>
+                <Button x:Name="cupBtn6" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,108,335,0"/>
+                <Button x:Name="cupBtn7" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0"/>
+                <Button x:Name="cupBtn8" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0"/>
+            </Grid>
+            <Grid x:Name="sodaGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Collapsed">
+                <Button Grid.Column="0" Grid.Row="0" x:Name="sodaBtn" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109"/>
+                <Button Grid.Row="0" x:Name="sodaBtn1" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109"/>
+                <Button Grid.Row="0" x:Name="sodaBtn2" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109"/>
+                <Button Grid.Row="0" x:Name="sodaBtn3" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,0,112,109"/>
+                <Button Grid.Row="0" x:Name="sodaBtn4" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="446,0,0,109"/>
+                <Button Grid.Column="0" x:Name="sodaBtn5" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,108,446,0"/>
+                <Button x:Name="sodaBtn6" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,108,335,0"/>
+                <Button x:Name="sodaBtn7" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0"/>
+                <Button x:Name="sodaBtn8" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0"/>
+            </Grid>
+            <Grid x:Name="basketGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Collapsed">
+                <Button Grid.Column="0" Grid.Row="0" x:Name="basketBtn" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109"/>
+                <Button Grid.Row="0" x:Name="basketBtn1" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109"/>
+                <Button Grid.Row="0" x:Name="basketBtn2" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109"/>
+                <Button Grid.Row="0" x:Name="basketBtn3" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,0,112,109"/>
+                <Button Grid.Row="0" x:Name="basketBtn4" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="446,0,0,109"/>
+                <Button Grid.Column="0" x:Name="basketBtn5" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,108,446,0"/>
+                <Button x:Name="basketBtn6" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,108,335,0"/>
+                <Button x:Name="basketBtn7" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0"/>
+                <Button x:Name="basketBtn8" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
