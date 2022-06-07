@@ -36,7 +36,7 @@
                 <StackPanel Orientation="Horizontal" Width="223">
                     <Image Source="/icons/icons8-basket-64.png" Stretch="Fill" UseLayoutRounding="False" Height="43" Width="43"/>
                     <TextBlock Padding="0" FontSize="32" Width="136" HorizontalAlignment="Stretch" VerticalAlignment="Center"><Run Text="Корзина"/></TextBlock>
-                    <Label x:Name="cartsLabel" FontSize="32" Background="{x:Null}" Foreground="White" Content="0" Width="26"/>
+                    <Label x:Name="cartsLabel" FontSize="32" Background="{x:Null}" Foreground="White" Content="0" Width="45"/>
                 </StackPanel>
             </Button>
         </ListBox>
