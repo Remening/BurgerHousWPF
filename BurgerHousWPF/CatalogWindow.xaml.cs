@@ -110,162 +110,162 @@ namespace BurgerHousWPF
 
         private void cheeseburgerBtn4_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cheeseburgerBtn5_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cheeseburgerBtn6_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cheeseburgerBtn7_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cheeseburgerBtn8_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn1_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn2_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn3_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn4_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn5_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn6_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn7_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void frenchFriesBtn8_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn1_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn2_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn3_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn4_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn5_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn6_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn7_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void cupBtn8_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn1_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn2_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn3_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn4_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn5_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn6_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn7_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
 
         private void sodaBtn8_Click(object sender, RoutedEventArgs e)
         {
-            cartsLabel.Content = $"{cartsItem + 1}";
+            cartsLabel.Content = $"{cartsItem += 1}";
         }
     }
 }
