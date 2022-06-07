@@ -87,7 +87,7 @@
                 <Button x:Name="cupBtn7" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0" Click="cupBtn7_Click"/>
                 <Button x:Name="cupBtn8" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0" Click="cupBtn8_Click"/>
             </Grid>
-            <Grid x:Name="sodaGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
+            <Grid x:Name="sodaGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible" d:IsHidden="True">
                 <Button Grid.Column="0" Grid.Row="0" x:Name="sodaBtn" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109" Click="sodaBtn_Click"/>
                 <Button Grid.Row="0" x:Name="sodaBtn1" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109" Click="sodaBtn1_Click"/>
                 <Button Grid.Row="0" x:Name="sodaBtn2" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109" Click="sodaBtn2_Click"/>
@@ -98,7 +98,7 @@
                 <Button x:Name="sodaBtn7" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0" Click="sodaBtn7_Click"/>
                 <Button x:Name="sodaBtn8" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0" Click="sodaBtn8_Click"/>
             </Grid>
-            <Grid x:Name="basketGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Collapsed" d:IsHidden="True">
+            <Grid x:Name="basketGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
                 <Button Grid.Column="0" Grid.Row="0" x:Name="basketBtn" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109"/>
                 <Button Grid.Row="0" x:Name="basketBtn1" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109"/>
                 <Button Grid.Row="0" x:Name="basketBtn2" Content="" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109"/>
