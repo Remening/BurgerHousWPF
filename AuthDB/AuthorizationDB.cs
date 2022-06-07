@@ -12,7 +12,7 @@ namespace ConnectionBD
 {
     public class AuthorizationDB
     {
-        static string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=SeedBase;" + "Integrated Security=true;";
+        static readonly string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=SeedBase;" + "Integrated Security=true;";
 
         public string AuthInDB(string login, string password)
         {
@@ -133,7 +133,7 @@ namespace ConnectionBD
 
     public class TableDB
     {
-        static string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=SeedBase;" + "Integrated Security=true;";
+        static readonly string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=SeedBase;" + "Integrated Security=true;";
 
         internal SqlDataAdapter adapter;
         internal DataTable usersTable;
@@ -301,7 +301,7 @@ namespace ConnectionBD
             return null;
         }
 
-        public List<string> tableColumn(string tableName)
+        public List<string> TableColumn(string tableName)
         {
             using (SqlConnection connection = new SqlConnection(connectString))
             {

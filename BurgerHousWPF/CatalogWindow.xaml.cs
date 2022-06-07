@@ -23,10 +23,6 @@ namespace BurgerHousWPF
         {
             InitializeComponent();
         }
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
         //TODO: Сделать отображение + скрытие прошлой сетки при выборе новой.
         //Отображает каталог бургеров
         private void BurgersBtn_Click(object sender, RoutedEventArgs e)
@@ -56,6 +52,19 @@ namespace BurgerHousWPF
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             basketGrid.Visibility = Visibility.Visible;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult dialogResult = MessageBox.Show("Вы уверены, что хотите выйти?", "Подвердить", MessageBoxButton.YesNo);
+            if (dialogResult == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

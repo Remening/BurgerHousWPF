@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BurgerHousWPF"
         mc:Ignorable="d"
-        Title="AdminsPanelWindow" Height="450" Width="800">
+        Title="AdminsPanelWindow" Height="450" Width="800" Closing="Window_Closing">
     <Grid Background="#FF330570">
         <Label Content="Совершено заказов:122" HorizontalAlignment="Left" Margin="627,405,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="Дата: 05.04.2022" HorizontalAlignment="Left" Margin="514,406,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14"/>
