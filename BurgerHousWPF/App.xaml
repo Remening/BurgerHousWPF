@@ -37,5 +37,12 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="{x:Type StackPanel}">
+            <Style.Triggers>
+                <Trigger Property="IsStylusCaptureWithin" Value="True">
+                    <Setter Property="Background" Value="#8243D6"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

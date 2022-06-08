@@ -74,12 +74,19 @@
       <DependentUpon>AuthWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="BuyingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CatalogWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuyingWindow.xaml.cs">
+      <DependentUpon>BuyingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CatalogWindow.xaml.cs">
       <DependentUpon>CatalogWindow.xaml</DependentUpon>
     </Compile>
@@ -114,6 +121,9 @@
     <Resource Include="icons\icons8-cup-60.png" />
     <Resource Include="icons\icons8-french-fries-60.png" />
     <Resource Include="icons\icons8-soda-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BigSandersBurger.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

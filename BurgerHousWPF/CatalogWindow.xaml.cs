@@ -267,5 +267,10 @@ namespace BurgerHousWPF
         {
             cartsLabel.Content = $"{cartsItem += 1}";
         }
+
+        private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            cartsLabel.Content = $"{cartsItem += 1}";
+        }
     }
 }
