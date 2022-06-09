@@ -277,8 +277,9 @@ namespace BurgerHousWPF
 
         private void bigSandersBtn_Click(object sender, RoutedEventArgs e)
         {
-            //BuyingWindow buyingWindow = new BuyingWindow();
-            //buyingWindow.Show();
+            BuyingWindow buyingWindow = new BuyingWindow();
+            buyingWindow.ShowDialog();
+            
             cartsLabel.Content = $"{cartsItem += 1}";
             //Добавление выбранной еды в корзину
             basketListBox.Items.Add($"{nameBigSandersTxt.Text.Trim()} - {priceBigSandersTxt.Text.Trim()}");
@@ -302,6 +303,14 @@ namespace BurgerHousWPF
                     basketListBox.Items.Remove(basketListBox.SelectedItem);
                 }
             }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ваш заказ успешно оплачен, ожидайте, вам его принесут");
+            basketListBox.Items.Clear();
+            itogoPriceLabel.Content = "0Р";
+            cartsLabel.Content = 0;
         }
     }
 }
