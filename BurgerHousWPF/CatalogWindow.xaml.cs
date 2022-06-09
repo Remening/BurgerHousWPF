@@ -20,9 +20,11 @@ namespace BurgerHousWPF
     public partial class CatalogWindow : Window
     {
         int cartsItem = 0;
+        internal int itogoPrice = 0;
         public CatalogWindow()
         {
             InitializeComponent();
+            itogoPriceLabel.Content = itogoPrice.ToString();
         }
         //TODO: Сделать отображение + скрытие прошлой сетки при выборе новой.
         //Отображает каталог бургеров
@@ -91,6 +93,7 @@ namespace BurgerHousWPF
         private void cheeseburgerBtn_Click(object sender, RoutedEventArgs e)
         {
             cartsLabel.Content = $"{cartsItem += 1}";
+            basketListBox.Items.Add($"{cheeseburgerBtn.Content}");
         }
 
         private void cheeseburgerBtn1_Click(object sender, RoutedEventArgs e)
@@ -268,9 +271,13 @@ namespace BurgerHousWPF
             cartsLabel.Content = $"{cartsItem += 1}";
         }
 
-        private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void bigSandersBtn_Click(object sender, RoutedEventArgs e)
         {
             cartsLabel.Content = $"{cartsItem += 1}";
+            //Добавление выбранной еды в корзину
+            basketListBox.Items.Add($"{nameBigSandersTxt.Text.Trim()} - {priceBigSandersTxt.Text.Trim()}");
+            //Изменение строки для рассчета итоговой стоимости
+            itogoPriceLabel.Content = $"{itogoPrice + Convert.ToInt32(priceBigSandersTxt.Text.Trim().Split('Р')[0])}Р";
         }
     }
 }
