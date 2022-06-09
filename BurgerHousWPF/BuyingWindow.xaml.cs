@@ -23,5 +23,16 @@ namespace BurgerHousWPF
         {
             InitializeComponent();
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Бургер добавлен в корзину");
+            this.Close();
+        }
     }
 }

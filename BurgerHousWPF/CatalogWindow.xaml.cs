@@ -21,6 +21,10 @@ namespace BurgerHousWPF
     {
         int cartsItem = 0;
         internal int itogoPrice = 0;
+        Dictionary<string, int> products = new Dictionary<string, int>()
+        {
+            {"Биг Сандерс", 249}
+        };
         public CatalogWindow()
         {
             InitializeComponent();
@@ -273,11 +277,31 @@ namespace BurgerHousWPF
 
         private void bigSandersBtn_Click(object sender, RoutedEventArgs e)
         {
+            //BuyingWindow buyingWindow = new BuyingWindow();
+            //buyingWindow.Show();
             cartsLabel.Content = $"{cartsItem += 1}";
             //Добавление выбранной еды в корзину
             basketListBox.Items.Add($"{nameBigSandersTxt.Text.Trim()} - {priceBigSandersTxt.Text.Trim()}");
             //Изменение строки для рассчета итоговой стоимости
-            itogoPriceLabel.Content = $"{itogoPrice + Convert.ToInt32(priceBigSandersTxt.Text.Trim().Split('Р')[0])}Р";
+            itogoPriceLabel.Content = $"{itogoPrice += Convert.ToInt32(priceBigSandersTxt.Text.Trim().Split('Р')[0])}Р";
+        }
+
+        private void basketListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(basketListBox.SelectedItem != null)
+            {
+                string[] selectItemPrice = basketListBox.SelectedItem.ToString().Trim().Split('-');
+                MessageBoxResult messageBoxResult = MessageBox.Show("Вы уверены, что хотите удалить из корзины?", "Удаление", MessageBoxButton.YesNo);
+                if(messageBoxResult == MessageBoxResult.Yes)
+                {
+                    if (selectItemPrice.Length > 1)
+                    {
+                        itogoPriceLabel.Content = $"{itogoPrice -= Convert.ToInt32(selectItemPrice[1].TrimEnd('Р'))}Р";
+                    }
+                    cartsLabel.Content = $"{cartsItem -= 1}";
+                    basketListBox.Items.Remove(basketListBox.SelectedItem);
+                }
+            }
         }
     }
 }
