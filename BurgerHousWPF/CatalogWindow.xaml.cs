@@ -30,7 +30,6 @@ namespace BurgerHousWPF
             InitializeComponent();
             itogoPriceLabel.Content = itogoPrice.ToString();
         }
-        //TODO: Сделать отображение + скрытие прошлой сетки при выборе новой.
         //Отображает каталог бургеров
         private void BurgersBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -279,12 +278,15 @@ namespace BurgerHousWPF
         {
             BuyingWindow buyingWindow = new BuyingWindow();
             buyingWindow.ShowDialog();
-            
-            cartsLabel.Content = $"{cartsItem += 1}";
-            //Добавление выбранной еды в корзину
-            basketListBox.Items.Add($"{nameBigSandersTxt.Text.Trim()} - {priceBigSandersTxt.Text.Trim()}");
-            //Изменение строки для рассчета итоговой стоимости
-            itogoPriceLabel.Content = $"{itogoPrice += Convert.ToInt32(priceBigSandersTxt.Text.Trim().Split('Р')[0])}Р";
+
+            if (buyingWindow.DialogResult == true)
+            {
+                cartsLabel.Content = $"{cartsItem += 1}";
+                //Добавление выбранной еды в корзину
+                basketListBox.Items.Add($"{nameBigSandersTxt.Text.Trim()} - {priceBigSandersTxt.Text.Trim()}");
+                //Изменение строки для рассчета итоговой стоимости
+                itogoPriceLabel.Content = $"{itogoPrice += Convert.ToInt32(priceBigSandersTxt.Text.Trim().Split('Р')[0])}Р";
+            }
         }
 
         private void basketListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -307,10 +309,17 @@ namespace BurgerHousWPF
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ваш заказ успешно оплачен, ожидайте, вам его принесут");
-            basketListBox.Items.Clear();
-            itogoPriceLabel.Content = "0Р";
-            cartsLabel.Content = 0;
+            if (itogoPrice > 0)
+            {
+                MessageBox.Show("Ваш заказ успешно оплачен, ожидайте, вам его принесут");
+                basketListBox.Items.Clear();
+                itogoPriceLabel.Content = "0Р";
+                cartsLabel.Content = 0;
+            }
+            else
+            {
+                MessageBox.Show("У вас пустая корзина");
+            }
         }
     }
 }

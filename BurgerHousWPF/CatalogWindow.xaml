@@ -54,7 +54,7 @@
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="50*"/>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="burgersGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible" d:IsHidden="True">
+            <Grid x:Name="burgersGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
                 <Button Grid.Column="0" Grid.Row="0" x:Name="cheeseburgerBtn" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109" Click="cheeseburgerBtn_Click"/>
                 <Button Grid.Row="0" x:Name="cheeseburgerBtn1" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109" Click="cheeseburgerBtn1_Click"/>
                 <Button Grid.Row="0" x:Name="cheeseburgerBtn2" Content="Чизбургер" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109" Click="cheeseburgerBtn2_Click"/>
@@ -105,7 +105,7 @@
                 <Button x:Name="sodaBtn7" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0" Click="sodaBtn7_Click"/>
                 <Button x:Name="sodaBtn8" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0" Click="sodaBtn8_Click"/>
             </Grid>
-            <Grid x:Name="basketGrid" Grid.ColumnSpan="5" Grid.RowSpan="4" Visibility="Visible">
+            <Grid x:Name="basketGrid" Grid.ColumnSpan="5" Grid.RowSpan="4" Visibility="Visible" d:IsHidden="True">
                 <ListBox x:Name="basketListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Visibility="Visible" Margin="0,0,279,0" FontSize="24" SelectionChanged="basketListBox_SelectionChanged" />
                 <Label x:Name="itogoPriceLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" Width="264" FontSize="32" Margin="284,304,0,0"/>
                 <Button Content="Купить" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="284,357,10,40" FontSize="22" Click="Button_Click_4" />

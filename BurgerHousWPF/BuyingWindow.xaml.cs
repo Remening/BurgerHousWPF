@@ -21,6 +21,7 @@ namespace BurgerHousWPF
     {
         public BuyingWindow()
         {
+            //TODO Сделать загрузку выбранного бургера
             InitializeComponent();
         }
 
@@ -31,8 +32,14 @@ namespace BurgerHousWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Бургер добавлен в корзину");
+            MessageBox.Show("Бургер добавлен в корзину", "Добавление в корзину", MessageBoxButton.OK);
+            DialogResult = true;
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }
