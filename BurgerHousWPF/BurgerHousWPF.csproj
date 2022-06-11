@@ -133,5 +133,11 @@
   <ItemGroup>
     <Resource Include="BigSandersBurger.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buregImg\BigTastyBurger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buregImg\TrippleCheeseburger.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

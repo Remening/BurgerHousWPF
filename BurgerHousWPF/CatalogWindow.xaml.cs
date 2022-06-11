@@ -93,52 +93,6 @@ namespace BurgerHousWPF
             }
         }
 
-        private void cheeseburgerBtn_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-            basketListBox.Items.Add($"{cheeseburgerBtn.Content}");
-        }
-
-        private void cheeseburgerBtn1_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-        }
-
-        private void cheeseburgerBtn2_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-        }
-
-        private void cheeseburgerBtn3_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-        }
-
-        private void cheeseburgerBtn4_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-        }
-
-        private void cheeseburgerBtn5_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-        }
-
-        private void cheeseburgerBtn6_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-        }
-
-        private void cheeseburgerBtn7_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-        }
-
-        private void cheeseburgerBtn8_Click(object sender, RoutedEventArgs e)
-        {
-            cartsLabel.Content = $"{cartsItem += 1}";
-        }
-
         private void frenchFriesBtn_Click(object sender, RoutedEventArgs e)
         {
             cartsLabel.Content = $"{cartsItem += 1}";
@@ -276,16 +230,73 @@ namespace BurgerHousWPF
 
         private void bigSandersBtn_Click(object sender, RoutedEventArgs e)
         {
-            BuyingWindow buyingWindow = new BuyingWindow();
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(priceBigSandersTxt.Text.Split('Р')[0]), 
+                233,
+                "Фантастически большой и неповторимо вкусный! Тройная порция оригинальных куриных стрипсов, двойная порция сыра, гора свежих овощей - на тающей булочке Бриошь, под фирменным соусом",
+                bigSandersImage.Source,
+                BigSandersTxt.Text);
             buyingWindow.ShowDialog();
+
+            //Получение новой цены бургера с допами
+            int newBurgerPrice = buyingWindow.NewBurgerPrice();
+
+            //Получение нового количества бургеров
+            int newBurgerAmount = buyingWindow.NewAmountBurgers();
 
             if (buyingWindow.DialogResult == true)
             {
                 cartsLabel.Content = $"{cartsItem += 1}";
                 //Добавление выбранной еды в корзину
-                basketListBox.Items.Add($"{nameBigSandersTxt.Text.Trim()} - {priceBigSandersTxt.Text.Trim()}");
+                basketListBox.Items.Add($"{BigSandersTxt.Text.Trim()} - {newBurgerPrice * newBurgerAmount}Р");
                 //Изменение строки для рассчета итоговой стоимости
-                itogoPriceLabel.Content = $"{itogoPrice += Convert.ToInt32(priceBigSandersTxt.Text.Trim().Split('Р')[0])}Р";
+                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice * newBurgerAmount)}Р";
+            }
+        }
+        private void bitTastyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(pricebigTastyTxt.Text.Split('Р')[0]),
+                315,
+                "Биг Тейсти - это сандвич с большим, рубленым бифштексом из 100% натуральной свежей говядины на булочке «Биг Тейсти» с кунжутом. Особый шарм сандвичу придают 3 куска сыра «Эмменталь», два ломтика помидора, свежий салат, лук и пикантный соус «Гриль». Многие справедливо считают данный бургер самым вкусным в меню.",
+                bigTastyImage.Source,
+                bigTastyTxt.Text);
+            buyingWindow.ShowDialog();
+            //Получение новой цены бургера с допами
+            int newBurgerPrice = buyingWindow.NewBurgerPrice();
+
+            //Получение нового количества бургеров
+            int newBurgerAmount = buyingWindow.NewAmountBurgers();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                cartsLabel.Content = $"{cartsItem += 1}";
+                //Добавление выбранной еды в корзину
+                basketListBox.Items.Add($"{bigTastyTxt.Text.Trim()} - {newBurgerPrice * newBurgerAmount}Р");
+                //Изменение строки для рассчета итоговой стоимости
+                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice * newBurgerAmount)}Р";
+            }
+        }
+
+        private void TrippleCheeseburgerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(priceTrippleCheeseburgerTxt.Text.Split('Р')[0]),
+               583,
+               "Тройной Чизбургер - это ваш любимый Чизбургер, только в три раза больше! Тройной чизбургер содержит 3 говяжьи котлеты без наполнителей, добавок или консервантов. Немного соли, перца, острые соленые огурцы, лук, кетчуп, горчица и три кусочка плавленого американского сыра. Когда по-настоящему голоден!",
+               TrippleCheeseburgerImage.Source,
+               TrippleCheeseburgerTxt.Text);
+            buyingWindow.ShowDialog();
+            //Получение новой цены бургера с допами
+            int newBurgerPrice = buyingWindow.NewBurgerPrice();
+
+            //Получение нового количества бургеров
+            int newBurgerAmount = buyingWindow.NewAmountBurgers();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                cartsLabel.Content = $"{cartsItem += newBurgerAmount}";
+                //Добавление выбранной еды в корзину
+                basketListBox.Items.Add($"{TrippleCheeseburgerTxt.Text.Trim()} - {newBurgerPrice * newBurgerAmount}Р");
+                //Изменение строки для рассчета итоговой стоимости
+                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice * newBurgerAmount)}Р";
             }
         }
 
@@ -321,5 +332,7 @@ namespace BurgerHousWPF
                 MessageBox.Show("У вас пустая корзина");
             }
         }
+
+        
     }
 }
