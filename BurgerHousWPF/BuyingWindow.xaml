@@ -16,8 +16,7 @@
         <Label x:Name="dopIngrLabel" Content="Доп. ингредиенты" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top" FontSize="26" Foreground="White" Height="45" Width="227"/>
         <Label Content="Описание:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="42" Width="124" Grid.Column="1"/>
         <Button x:Name="addToCartsBtn" Content="Добавить в корзину" Margin="10,468,10,10" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="Button_Click"/>
-        <TextBlock x:Name="burgerDescription" HorizontalAlignment="Center" Margin="0,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="201" Width="260" Foreground="White" Grid.Column="1"/>
-        <Label x:Name="burgerCal" Content="Ккал:" HorizontalAlignment="Left" Margin="140,10,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="42" Width="66" Grid.Column="1"/>
+        <TextBlock x:Name="burgerDescription" HorizontalAlignment="Center" Margin="0,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="437" Width="260" Foreground="White" Grid.Column="1" FontSize="16"/>
         <Button x:Name="addBurgers" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="addBurgers_Click" Margin="10,398,206,41">
             <Viewbox Width="60" Height="61">
                 <Grid Width="20" Height="20">
@@ -35,7 +34,7 @@
             </Viewbox>
         </Button>
         <Label x:Name="burgerAmount" Content="Label" HorizontalAlignment="Center" Margin="0,403,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,223,0,0" TextWrapping="Wrap" Text="Ломтик Бекона + 29 руб." VerticalAlignment="Top" FontSize="22" Foreground="White" Width="270"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,223,0,0" TextWrapping="Wrap" Text="Ломтик Бекона + 25 руб." VerticalAlignment="Top" FontSize="22" Foreground="White" Width="270"/>
         <Button x:Name="addBekon" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="addBekon_Click" Margin="10,257,234,210">
             <Viewbox>
                 <Grid Width="20" Height="20">

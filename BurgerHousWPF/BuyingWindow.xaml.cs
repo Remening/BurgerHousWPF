@@ -31,7 +31,7 @@ namespace BurgerHousWPF
         {
             //TODO Сделать кнопки добавление и убирание бургера работающими
             InitializeComponent();
-            burgerCal.Content += BurgerCal.ToString();
+            //burgerCal.Content += BurgerCal.ToString();
             burgerDescription.Text = $"{BurgerDescription}";
             burgerImage.Source = BurgerImage;
             burgerNameLabel.Content = BurgerNameLabel;

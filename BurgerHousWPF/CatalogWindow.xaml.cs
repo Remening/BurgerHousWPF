@@ -310,6 +310,7 @@ namespace BurgerHousWPF
         {
             if (itogoPrice > 0)
             {
+                PaymentWindow paymentWindow = new PaymentWindow();
                 MessageBox.Show("Ваш заказ успешно оплачен, ожидайте, вам его принесут");
                 basketListBox.Items.Clear();
                 itogoPriceLabel.Content = "0Р";

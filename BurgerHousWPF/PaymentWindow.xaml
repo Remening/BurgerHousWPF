@@ -1,0 +1,20 @@
+﻿<Window x:Class="BurgerHousWPF.PaymentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BurgerHousWPF"
+        mc:Ignorable="d"
+        Title="PaymentWindow" Height="450" Width="265" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Получено от клиента.:" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="receivedFromCustomerTxtBox" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="244" FontSize="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,97,0,0" TextWrapping="Wrap" Text="Сумма к оплате.:" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,185,0,0" TextWrapping="Wrap" Text="Сдача.:" VerticalAlignment="Top" FontSize="24"/>
+        <Button Content="Принять оплату" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" FontSize="24" Width="244" Click="Button_Click"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top" FontSize="24" Width="244" Click="Button_Click_1"/>
+        <TextBlock x:Name="amountDueTxtBlock" HorizontalAlignment="Center" Margin="0,129,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="32" Width="244"/>
+        <TextBlock x:Name="surrenderTxtBlock" HorizontalAlignment="Center" Margin="0,222,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="32" Width="244"/>
+
+    </Grid>
+</Window>
