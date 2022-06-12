@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BurgerHousWPF"
         mc:Ignorable="d"
-        Title="CatalogWindow" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="Меню" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid Background="#FF330570" Height="433.8">
         <ListBox Background="#FF530FAD" BorderBrush="#FF330570" Foreground="White" FontSize="16" BorderThickness="1,1,0.6,1" Height="434" VerticalAlignment="Center" HorizontalAlignment="Right" Width="237" Margin="0,0,563,0">
             <Button x:Name="burgersBtn"  FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Width="220" Click="BurgersBtn_Click" >

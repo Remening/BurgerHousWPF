@@ -13,9 +13,10 @@
         <Label x:Name="LoginLabel" Content="Введите логин" HorizontalAlignment="Center" Margin="0,136,0,0" VerticalAlignment="Top" FontSize="16" Width="138" Foreground="White"/>
         <TextBox x:Name="LoginTxtBox" HorizontalAlignment="Center" Margin="0,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontSize="16" Foreground="White" Background="#FF996AD6" BorderBrush="{x:Null}" CaretBrush="White" FontStyle="Normal" Height="24"/>
         <Label x:Name="PasswordLabel" Content="Введите пароль" HorizontalAlignment="Center" Margin="0,196,0,0" VerticalAlignment="Top" FontSize="16" Width="138" Foreground="White"/>
-        <TextBox x:Name="PasswordTxtBox" HorizontalAlignment="Center" Margin="0,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" FontSize="16" Foreground="White" Background="#FF996AD6" BorderBrush="{x:Null}" CaretBrush="White" Height="24"/>
+        <PasswordBox x:Name="PasswordTxtBox" HorizontalAlignment="Center" Margin="0,227,0,0" VerticalAlignment="Top" Width="138" FontSize="16" Foreground="White" Background="#FF996AD6" BorderBrush="{x:Null}" CaretBrush="White" Height="24" AutomationProperties.HelpText="Пароль"/>
         <Button x:Name="EnterBtn" Content="Войти" HorizontalAlignment="Center" Margin="0,253,0,0" VerticalAlignment="Top" FontSize="16" Width="138" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="EnterBtn_Click"/>
         <Label x:Name="NameIncLabel" Content="AlexBurger" HorizontalAlignment="Center" Margin="0,41,0,0" VerticalAlignment="Top" FontSize="48" Foreground="White" FontWeight="Bold"/>
+        
     </Grid>
 </Window>
 

@@ -23,12 +23,13 @@ namespace BurgerHousWPF
         public AuthWindow()
         {
             InitializeComponent();
+            PasswordTxtBox.PasswordChar = '*';
         }
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
             string temp_login = LoginTxtBox.Text.Trim();
-            string temp_password = PasswordTxtBox.Text.Trim();
+            string temp_password = PasswordTxtBox.Password.Trim();
 
             if (temp_login == "111" && temp_password == "111")
             {
