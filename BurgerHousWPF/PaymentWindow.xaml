@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BurgerHousWPF"
         mc:Ignorable="d"
-        Title="PaymentWindow" Height="450" Width="265" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+        Title="PaymentWindow" Height="435" Width="320" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Получено от клиента.:" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="receivedFromCustomerTxtBox" DataObject.Pasting="TextBoxPasting" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="32" TextChanged="receivedFromCustomerTxtBox_TextChanged" PreviewTextInput="PreviewTextInput"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Получено от клиента.:" VerticalAlignment="Top" FontSize="24" Margin="10,10,0,0"/>
+        <TextBox x:Name="receivedFromCustomerTxtBox" DataObject.Pasting="TextBoxPasting" HorizontalAlignment="Center" Margin="0,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="32" TextChanged="receivedFromCustomerTxtBox_TextChanged" PreviewTextInput="PreviewTextInput"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,97,0,0" TextWrapping="Wrap" Text="Сумма к оплате.:" VerticalAlignment="Top" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,185,0,0" TextWrapping="Wrap" Text="Сдача.:" VerticalAlignment="Top" FontSize="24"/>
-        <Button Content="Принять оплату" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" FontSize="24" Width="244" Click="Button_Click"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="10,313,0,0" VerticalAlignment="Top" FontSize="24" Width="244" Click="Button_Click_1"/>
-        <TextBlock x:Name="amountDueTxtBlock" HorizontalAlignment="Center" Margin="0,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Width="244"/>
-        <TextBlock x:Name="surrenderTxtBlock" HorizontalAlignment="Center" Margin="0,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Width="244"/>
-        
+        <Button Content="Принять оплату" Margin="0,272,0,0" FontSize="24" Click="Button_Click" HorizontalAlignment="Center" Width="300" Height="36" VerticalAlignment="Top"/>
+        <Button Content="Отмена" Margin="0,313,0,0" FontSize="24" Click="Button_Click_1" Height="36" VerticalAlignment="Top" HorizontalAlignment="Center" Width="300"/>
+        <TextBlock x:Name="amountDueTxtBlock" HorizontalAlignment="Center" Margin="0,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Width="300"/>
+        <TextBlock x:Name="surrenderTxtBlock" HorizontalAlignment="Center" Margin="0,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Width="300"/>
+
     </Grid>
 </Window>

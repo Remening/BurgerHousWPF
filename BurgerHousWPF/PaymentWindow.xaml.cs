@@ -31,15 +31,24 @@ namespace BurgerHousWPF
         //Принять оплату
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(Convert.ToInt32(receivedFromCustomerTxtBox.Text) < Convert.ToInt32(amountDueTxtBlock.Text))
+            int price;
+            try
             {
-                MessageBox.Show("Недостаточная сумма для оплаты");
+                price = Convert.ToInt32(receivedFromCustomerTxtBox.Text);
+                if (price < Convert.ToInt32(amountDueTxtBlock.Text))
+                {
+                    MessageBox.Show("Недостаточная сумма для оплаты");
+                }
+                else
+                {
+                    MessageBox.Show($"Ваш заказ успешно оплачен, ожидайте, вам его принесут\n Ваш номер заказа: {rnd.Next(0, 999)}");
+                    DialogResult = true;
+                    this.Close();
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show($"Ваш заказ успешно оплачен, ожидайте, вам его принесут\n Ваш номер заказа: {rnd.Next(0, 999)}");
-                DialogResult = true;
-                this.Close();
+                MessageBox.Show("Введите сумму для оплаты");
             }
         }
         //Отмена оплаты
@@ -70,9 +79,15 @@ namespace BurgerHousWPF
         {
             int surrender = 0;
 
+            try
+            {
+                surrender = Convert.ToInt32(receivedFromCustomerTxtBox.Text) - Convert.ToInt32(amountDueTxtBlock.Text);
+                surrenderTxtBlock.Text = surrender.ToString();
+            }
+            catch (Exception)
+            {
 
-            surrender = Convert.ToInt32(receivedFromCustomerTxtBox.Text) - Convert.ToInt32(amountDueTxtBlock.Text);
-            surrenderTxtBlock.Text = surrender.ToString();
+            }
         }
 
         private new void PreviewTextInput(object sender, TextCompositionEventArgs e)
