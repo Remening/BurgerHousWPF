@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ConnectionBD;
 
 namespace BurgerHousWPF
 {
@@ -20,6 +21,7 @@ namespace BurgerHousWPF
     /// </summary>
     public partial class AuthWindow : Window
     {
+        AuthorizationDB atd = new AuthorizationDB();
         public AuthWindow()
         {
             InitializeComponent();
@@ -28,29 +30,47 @@ namespace BurgerHousWPF
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            string temp_login = LoginTxtBox.Text.Trim();
-            string temp_password = PasswordTxtBox.Password.Trim();
+            string role = atd.AuthInDB(LoginTxtBox.Text.Trim(), PasswordTxtBox.Password.Trim());
 
-            if (temp_login == "111" && temp_password == "111")
+            if(role.Equals("Администратор"))
             {
                 AdminsPanelWindow adminsPanelWindow = new AdminsPanelWindow();
                 this.Hide();
                 adminsPanelWindow.Show();
             }
-            else if (temp_login == "222" && temp_password == "222")
+            else if (role.Equals("Кассир"))
             {
                 CatalogWindow catalogWindow = new CatalogWindow();
                 this.Hide();
                 catalogWindow.Show();
             }
-            else if (temp_login == "333" && temp_password == "333")
-            {
-                MessageBox.Show("In develope");
-            }
             else
             {
-                MessageBox.Show("Вы ввели неверный логин или пароль, повторите попытку");
+
             }
+            //string temp_login = LoginTxtBox.Text.Trim();
+            //string temp_password = PasswordTxtBox.Password.Trim();
+
+            //if (temp_login == "111" && temp_password == "111")
+            //{
+            //    AdminsPanelWindow adminsPanelWindow = new AdminsPanelWindow();
+            //    this.Hide();
+            //    adminsPanelWindow.Show();
+            //}
+            //else if (temp_login == "222" && temp_password == "222")
+            //{
+            //    CatalogWindow catalogWindow = new CatalogWindow();
+            //    this.Hide();
+            //    catalogWindow.Show();
+            //}
+            //else if (temp_login == "333" && temp_password == "333")
+            //{
+            //    MessageBox.Show("In develope");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Вы ввели неверный логин или пароль, повторите попытку");
+            //}
         }
         private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
         {

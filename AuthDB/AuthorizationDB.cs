@@ -12,7 +12,7 @@ namespace ConnectionBD
 {
     public class AuthorizationDB
     {
-        static readonly string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=SeedBase;" + "Integrated Security=true;";
+        static readonly string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=BurgerHouse;" + "Integrated Security=true;";
 
         public string AuthInDB(string login, string password)
         {
@@ -20,7 +20,7 @@ namespace ConnectionBD
             {
                 connection.Open();
 
-                string queryToDB = "SELECT * FROM Users";
+                string queryToDB = "select Администраторы.Роль, Администраторы.Логин, Администраторы.Пароль, Кассир.Роль, Кассир.Логин, Кассир.Пароль  from Администраторы, Кассир where Администраторы.ID_Администратора = Кассир.ID_Кассира";
 
                 SqlCommand command = new SqlCommand(queryToDB, connection);
                 SqlDataReader reader = command.ExecuteReader();
@@ -29,27 +29,31 @@ namespace ConnectionBD
                 {
                     while (reader.Read())
                     {
-                        string readerLogin = reader.GetString(1).Trim();
-                        string readerPassword = reader.GetString(2).Trim();
-                        string readerRole = reader.GetString(3).Trim();
+                        string readerAdminRole = reader.GetString(0).Trim();
+                        string readerAdminLogin = reader.GetString(1).Trim();
+                        string readerAdminPassword = reader.GetString(2).Trim();
 
-                        if (readerLogin.Equals(login) && readerPassword.Equals(password))
+                        string readerCashierRole = reader.GetString(3).Trim();
+                        string readerCashierLogin = reader.GetString(4).Trim();
+                        string readerCashierPassword = reader.GetString(5).Trim();
+
+                        if (readerAdminLogin.Equals(login) && readerAdminPassword.Equals(password))
                         {
-                            MessageBox.Show($"Вход выполнен {readerRole}");
-                            return readerRole;
+                            MessageBox.Show($"Вход выполнен {readerAdminRole}");
+                            return readerAdminRole;
+                        }
+                        else if(readerCashierLogin.Equals(login) && readerCashierPassword.Equals(password))
+                        {
+                            MessageBox.Show($"Вход выполнен {readerCashierRole}");
+                            return readerCashierRole;
                         }
                         else if (login == "" || password == "")
                         {
                             MessageBox.Show("Заполните все поля для входа в систему");
                             break;
                         }
-                        //ЕСЛИ логин есть в БД И пароля нет в БД ИЛИ логина нет в БД И пароль есть в БД
-                        else if (readerLogin.Equals(login) && readerPassword.Equals(password) != true || readerLogin.Equals(login) != true && readerPassword.Equals(password))
-                        {
-                            MessageBox.Show("Вы ввели неверный логин или пароль.");
-                            break;
-                        }
                     }
+                    MessageBox.Show("Вы ввели неверный логин или пароль.");
                     reader.Close();
                     connection.Close();
                 }

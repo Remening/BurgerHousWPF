@@ -149,5 +149,11 @@
   <ItemGroup>
     <Resource Include="buregImg\kisspng-whopper-hamburger-cheeseburger-burger-king-premium-fast-food-burger-5a725b35c699e9.5347042815174438938135.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuthDB\ConnectionBD.csproj">
+      <Project>{0e12bbba-76f1-43fa-8d15-63d4e722c9a6}</Project>
+      <Name>ConnectionBD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
