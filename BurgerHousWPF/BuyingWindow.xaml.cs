@@ -106,8 +106,23 @@ namespace BurgerHousWPF
         private void addBurgers_Click(object sender, RoutedEventArgs e)
         {
             BurgerAmount += 1;
+            if (bekonCount > 0 && cheeseCount > 0)
+            {
+                fullBurgerPrice += burgerPrice + ((20 * cheeseCount) + (25 * bekonCount));
+            }
+            else if (bekonCount > 0)
+            {
+                fullBurgerPrice += burgerPrice + (25 * bekonCount);
+            }
+            else if(cheeseCount > 0)
+            {
+                fullBurgerPrice += burgerPrice + (20 * cheeseCount);
+            }
+            else
+            {
+                fullBurgerPrice += burgerPrice;
+            }
             burgerAmount.Content = BurgerAmount;
-            fullBurgerPrice += burgerPrice;
             addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
         }
 
@@ -119,7 +134,7 @@ namespace BurgerHousWPF
             }
             else
             {
-                fullBurgerPrice += 25;
+                fullBurgerPrice += 25 * BurgerAmount;
                 bekonCount += 1;
                 allDopIngredient += 1;
                 bekonAmountLabel.Content = bekonCount;
@@ -135,7 +150,7 @@ namespace BurgerHousWPF
             }
             else
             {
-                fullBurgerPrice -= 25;
+                fullBurgerPrice -= 25 * BurgerAmount;
                 bekonCount -= 1;
                 allDopIngredient -= 1;
                 bekonAmountLabel.Content = bekonCount;
