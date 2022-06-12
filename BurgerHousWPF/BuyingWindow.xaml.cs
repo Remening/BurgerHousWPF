@@ -67,52 +67,6 @@ namespace BurgerHousWPF
             return BurgerAmount;
         }
 
-        //Добавление двойной порции сыра (25р)
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            //MessageBoxResult messageBoxResult = MessageBox.Show("Применить ко всем бургерам?", "Доп ингредиенты", MessageBoxButton.YesNo);
-            //if (messageBoxResult == MessageBoxResult.Yes)
-            //{
-                fullBurgerPrice += 25 * BurgerAmount;
-                addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
-            //}
-            //else if (messageBoxResult == MessageBoxResult.No)
-            //{
-            //    fullBurgerPrice += 25;
-            //    addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
-            //}
-        }
-
-        //Удаление двойной порции сыра (25р)
-        private void doubleCheeseCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            fullBurgerPrice -= 25 * BurgerAmount;
-            addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
-        }
-
-        //Добавление пепперони (35р)
-        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
-        {
-            //MessageBoxResult messageBoxResult = MessageBox.Show("Применить ко всем бургерам?", "Доп ингредиенты", MessageBoxButton.YesNo);
-            //if (messageBoxResult == MessageBoxResult.Yes)
-            //{
-                fullBurgerPrice += 25 * BurgerAmount;
-                addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
-            //}
-            //else if (messageBoxResult == MessageBoxResult.No)
-            //{
-            //    fullBurgerPrice += 25;
-            //    addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
-            //}
-        }
-
-        //Удаление пепперони (35р)
-        private void peperoniCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            fullBurgerPrice -= 35 * BurgerAmount;
-            addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
-        }
-
         private void deleteBurgers_Click(object sender, RoutedEventArgs e)
         {
             if(BurgerAmount == 1)
@@ -125,6 +79,11 @@ namespace BurgerHousWPF
                 burgerAmount.Content = BurgerAmount;
                 fullBurgerPrice -= burgerPrice;
                 addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
+                if(bekonCount > BurgerAmount * 2)
+                {
+                    bekonCount = BurgerAmount * 2;
+                    bekonAmountLabel.Content = bekonCount;
+                }
             }
         }
 

@@ -139,5 +139,11 @@
   <ItemGroup>
     <Resource Include="buregImg\TrippleCheeseburger.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buregImg\kisspng-whopper-hamburger-cheeseburger-burger-king-premium-fast-food-burger-5a725b35c699e9.5347042815174438938135.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buregImg\kisspng-whopper-hamburger-cheeseburger-burger-king-premium-fast-food-burger-5a725b36236b17.0609939815174438941451.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,10 +21,6 @@ namespace BurgerHousWPF
     {
         int cartsItem = 0;
         internal int itogoPrice = 0;
-        Dictionary<string, int> products = new Dictionary<string, int>()
-        {
-            {"Биг Сандерс", 249}
-        };
         public CatalogWindow()
         {
             InitializeComponent();
@@ -247,11 +243,12 @@ namespace BurgerHousWPF
             {
                 cartsLabel.Content = $"{cartsItem += newBurgerAmount}";
                 //Добавление выбранной еды в корзину
-                basketListBox.Items.Add($"{BigSandersTxt.Text.Trim()} - ({newBurgerAmount}) - {newBurgerPrice}Р");
+                basketListBox.Items.Add($"{BigSandersTxt.Text.Trim()}({newBurgerAmount}шт.) - {newBurgerPrice}Р");
                 //Изменение строки для рассчета итоговой стоимости
                 itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice)}Р";
             }
         }
+
         private void bitTastyBtn_Click(object sender, RoutedEventArgs e)
         {
             BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(pricebigTastyTxt.Text.Split('Р')[0]),
@@ -294,7 +291,7 @@ namespace BurgerHousWPF
             {
                 cartsLabel.Content = $"{cartsItem += newBurgerAmount}";
                 //Добавление выбранной еды в корзину
-                basketListBox.Items.Add($"{TrippleCheeseburgerTxt.Text.Trim()}({newBurgerAmount}) - {newBurgerPrice}Р");
+                basketListBox.Items.Add($"{TrippleCheeseburgerTxt.Text.Trim()}({newBurgerAmount}шт.) - {newBurgerPrice}Р");
                 //Изменение строки для рассчета итоговой стоимости
                 itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice)}Р";
             }
@@ -333,7 +330,5 @@ namespace BurgerHousWPF
                 MessageBox.Show("У вас пустая корзина");
             }
         }
-
-        
     }
 }

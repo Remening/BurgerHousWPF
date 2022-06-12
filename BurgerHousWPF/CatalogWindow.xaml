@@ -54,7 +54,7 @@
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="50*"/>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="burgersGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible" d:IsHidden="True">
+            <Grid x:Name="burgersGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
                 <Button x:Name="bigSandersBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,451,113" Click="bigSandersBtn_Click">
                     <StackPanel x:Name="bigSandersStackPanel">
                         <Image x:Name="bigSandersImage" HorizontalAlignment="Left" Source="/BigSandersBurger.png"/>
@@ -64,7 +64,7 @@
                 </Button>
                 <Button x:Name="bigTastyBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="112,0,339,113" Click="bitTastyBtn_Click">
                     <StackPanel x:Name="bigTastyStackPanel">
-                        <Image x:Name="bigTastyImage" HorizontalAlignment="Left" Source="/buregImg/BigTastyBurger.png" Width="103" Height="58" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <Image x:Name="bigTastyImage" HorizontalAlignment="Left" Source="/buregImg/kisspng-whopper-hamburger-cheeseburger-burger-king-premium-fast-food-burger-5a725b36236b17.0609939815174438941451.png" Width="103" Height="58" Stretch="UniformToFill" StretchDirection="DownOnly"/>
                         <TextBlock x:Name="bigTastyTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center">Биг Тейсти</TextBlock>
                         <TextBlock x:Name="pricebigTastyTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14">219Р</TextBlock>
                     </StackPanel>
@@ -110,7 +110,7 @@
                 <Button x:Name="sodaBtn7" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0" Click="sodaBtn7_Click"/>
                 <Button x:Name="sodaBtn8" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0" Click="sodaBtn8_Click"/>
             </Grid>
-            <Grid x:Name="basketGrid" Grid.ColumnSpan="5" Grid.RowSpan="4" Visibility="Visible">
+            <Grid x:Name="basketGrid" Grid.ColumnSpan="5" Grid.RowSpan="4" Visibility="Visible" d:IsHidden="True">
                 <ListBox x:Name="basketListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Visibility="Visible" Margin="0,0,160,0" FontSize="24" SelectionChanged="basketListBox_SelectionChanged" />
                 <Label x:Name="itogoPriceLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" Width="145" FontSize="32" Margin="403,304,0,0"/>
                 <Button Content="Купить" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="403,357,10,10" FontSize="22" Click="Button_Click_4" />
