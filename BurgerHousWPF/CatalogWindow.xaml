@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BurgerHousWPF"
         mc:Ignorable="d"
-        Title="Меню" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="Меню" Height="450" Width="799" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid Background="#FF330570" Height="433.8">
         <ListBox Background="#FF530FAD" BorderBrush="#FF330570" Foreground="White" FontSize="16" BorderThickness="1,1,0.6,1" Height="434" VerticalAlignment="Center" HorizontalAlignment="Right" Width="237" Margin="0,0,563,0">
             <Button x:Name="burgersBtn"  FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Width="220" Click="BurgersBtn_Click" >
@@ -42,38 +42,78 @@
         </ListBox>
         <Grid x:Name="productGrid" VerticalAlignment="Center" Height="434" ShowGridLines="false" UseLayoutRounding="False" HorizontalAlignment="Right" Width="558">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="50*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50*"/>
-                <ColumnDefinition Width="50*"/>
-                <ColumnDefinition Width="50*"/>
-                <ColumnDefinition Width="50*"/>
-                <ColumnDefinition Width="50*"/>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="burgersGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
-                <Button x:Name="bigSandersBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,451,113" Click="bigSandersBtn_Click">
+            <Grid x:Name="burgersGrid" Visibility="Visible">
+                <Button x:Name="bigSandersBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,428,310" Click="bigSandersBtn_Click" Initialized="bigSandersBtn_Initialized">
                     <StackPanel x:Name="bigSandersStackPanel">
                         <Image x:Name="bigSandersImage" HorizontalAlignment="Left" Source="/BigSandersBurger.png"/>
-                        <TextBlock x:Name="BigSandersTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center">Биг Сандерс</TextBlock>
-                        <TextBlock x:Name="priceBigSandersTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14">249Р</TextBlock>
+                        <TextBlock x:Name="BigSandersTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="priceBigSandersTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
-                <Button x:Name="bigTastyBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="112,0,339,113" Click="bitTastyBtn_Click">
-                    <StackPanel x:Name="bigTastyStackPanel">
-                        <Image x:Name="bigTastyImage" HorizontalAlignment="Left" Source="/buregImg/kisspng-whopper-hamburger-cheeseburger-burger-king-premium-fast-food-burger-5a725b36236b17.0609939815174438941451.png" Width="103" Height="58" Stretch="UniformToFill" StretchDirection="DownOnly"/>
-                        <TextBlock x:Name="bigTastyTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center">Биг Тейсти</TextBlock>
-                        <TextBlock x:Name="pricebigTastyTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14">219Р</TextBlock>
+                <Button x:Name="bigTastyBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="135,0,293,310" Click="bitTastyBtn_Click">
+                    <StackPanel x:Name="bigTastyStackPanel" Initialized="bigTastyStackPanel_Initialized">
+                        <Image x:Name="bigTastyImage" Source="/buregImg/TrippleCheeseburger.png" Stretch="UniformToFill" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="bigTastyTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="pricebigTastyTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"/>
                     </StackPanel>
                 </Button>
-                <Button x:Name="TrippleCheeseburgerBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="224,0,220,113" Click="TrippleCheeseburgerBtn_Click">
+                <Button x:Name="TrippleCheeseburgerBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="270,0,158,310" Click="TrippleCheeseburgerBtn_Click" Initialized="TrippleCheeseburgerBtn_Initialized">
                     <StackPanel x:Name="TrippleCheeseburgerPanel">
-                        <Image x:Name="TrippleCheeseburgerImage" HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Width="103" Height="58" Stretch="Uniform" StretchDirection="DownOnly"/>
-                        <TextBlock x:Name="TrippleCheeseburgerTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center">Тройной Чизбургер</TextBlock>
-                        <TextBlock x:Name="priceTrippleCheeseburgerTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14">199Р</TextBlock>
+                        <Image x:Name="TrippleCheeseburgerImage" HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="TrippleCheeseburgerTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextAlignment="Justify" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="priceTrippleCheeseburgerTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="405,0,23,310" Click="SandersDeLuxBtn_Click" Initialized="SandersDeLuxBtn_Initialized" Width="130">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly" Width="126" Height="70"/>
+                        <TextBlock x:Name="SandersDeLuxNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="SandersDeLuxPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,129,428,185" Click="ChiefburgerDeLuxBtn_Click" Initialized="ChiefburgerDeLuxBtn_Initialized" Height="124">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="ChiefburgerDeLuxNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" FontSize="11"></TextBlock>
+                        <TextBlock x:Name="ChiefburgerDeLuxPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="135,129,293,181" Click="ChiefburgerBtn_Click" Initialized="ChiefburgerBtn_Initialized" Width="130" Height="124">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="ChiefburgerNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="ChiefburgerPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="270,129,158,181" Click="CheeseburgerDeLuxNameBtn_Click" Initialized="CheeseburgerDeLuxBtn_Initialized" Width="130" Height="124">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="CheeseburgerDeLuxNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="CheeseburgerDeLuxPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="405,129,23,181" Click="CheeseburgerBtn_Click" Initialized="CheeseburgerBtn_Initialized" Width="130" Height="124">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="CheeseburgerNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="CheeseburgerPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="135,258,293,52" Click="ChickenburgerrBtn_Click" Initialized="ChickenburgerBtn_Initialized" Width="130" Height="124">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="ChickenburgerNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="ChickenburgerPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,258,428,54" Click="ChiefburgerjuniorBtn_Click" Initialized="ChiefburgerjuniorBtn_Initialized" Width="130" Height="122">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="ChiefburgerjuniorNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="ChiefburgerjuniorPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
             </Grid>

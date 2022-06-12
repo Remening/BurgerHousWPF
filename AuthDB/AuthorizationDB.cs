@@ -6,7 +6,14 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Controls;
+using System.Text;
+using System.Windows;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace ConnectionBD
 {
@@ -137,7 +144,7 @@ namespace ConnectionBD
 
     public class TableDB
     {
-        static readonly string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=SeedBase;" + "Integrated Security=true;";
+        static readonly string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=BurgerHouse;" + "Integrated Security=true;";
 
         internal SqlDataAdapter adapter;
         internal DataTable usersTable;
@@ -190,6 +197,53 @@ namespace ConnectionBD
                     }
                 }
                 return duck;
+            }
+        }
+
+        public List<string> SelectBurger(int productId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                string query = $"Select Цена, Каллорийность, Описание, Название From Продукты Where ID_Продукта = {productId}";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                List<string> duck = new List<string>();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        duck.Add(reader.GetInt32(0).ToString());
+                        duck.Add(reader.GetInt32(1).ToString());
+                        duck.Add(reader.GetString(2).Trim());
+                        duck.Add(reader.GetString(3).Trim());
+                    }
+                }
+                return duck;
+            }
+        }
+
+        public void AddNamePriceBurger(TextBlock productName, TextBlock productPrice, int productId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                string query = $"Select Название, Цена From Продукты Where ID_Продукта = {productId}";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        productName.Text = $"{reader.GetString(0).Trim()}";
+                        productPrice.Text = $"{reader.GetInt32(1)}Р";
+                    }
+                }
             }
         }
 

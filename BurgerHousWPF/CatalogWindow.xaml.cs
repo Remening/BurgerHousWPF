@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ConnectionBD;
 
 namespace BurgerHousWPF
 {
@@ -19,6 +20,7 @@ namespace BurgerHousWPF
     /// </summary>
     public partial class CatalogWindow : Window
     {
+        TableDB tdb = new TableDB();
         int cartsItem = 0;
         internal int itogoPrice = 0;
         public CatalogWindow()
@@ -224,13 +226,15 @@ namespace BurgerHousWPF
             cartsLabel.Content = $"{cartsItem += 1}";
         }
 
+        private void burgersAdd()
+        {
+
+        }
+
         private void bigSandersBtn_Click(object sender, RoutedEventArgs e)
         {
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(priceBigSandersTxt.Text.Split('Р')[0]), 
-                233,
-                "Фантастически большой и неповторимо вкусный! Тройная порция оригинальных куриных стрипсов, двойная порция сыра, гора свежих овощей - на тающей булочке Бриошь, под фирменным соусом",
-                bigSandersImage.Source,
-                BigSandersTxt.Text);
+            List<string> ts = tdb.SelectBurger(1);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], bigSandersImage.Source, ts[3]);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -241,11 +245,8 @@ namespace BurgerHousWPF
 
         private void bitTastyBtn_Click(object sender, RoutedEventArgs e)
         {
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(pricebigTastyTxt.Text.Split('Р')[0]),
-                315,
-                "Биг Тейсти - это сандвич с большим, рубленым бифштексом из 100% натуральной свежей говядины на булочке «Биг Тейсти» с кунжутом. Особый шарм сандвичу придают 3 куска сыра «Эмменталь», два ломтика помидора, свежий салат, лук и пикантный соус «Гриль». Многие справедливо считают данный бургер самым вкусным в меню.",
-                bigTastyImage.Source,
-                bigTastyTxt.Text);
+            List<string> ts = tdb.SelectBurger(2);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], bigTastyImage.Source, ts[3]);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -256,11 +257,8 @@ namespace BurgerHousWPF
 
         private void TrippleCheeseburgerBtn_Click(object sender, RoutedEventArgs e)
         {
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(priceTrippleCheeseburgerTxt.Text.Split('Р')[0]),
-               583,
-               "Тройной Чизбургер - это ваш любимый Чизбургер, только в три раза больше! Тройной чизбургер содержит 3 говяжьи котлеты без наполнителей, добавок или консервантов. Немного соли, перца, острые соленые огурцы, лук, кетчуп, горчица и три кусочка плавленого американского сыра. Когда по-настоящему голоден!",
-               TrippleCheeseburgerImage.Source,
-               TrippleCheeseburgerTxt.Text);
+            List<string> ts = tdb.SelectBurger(3);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -268,6 +266,91 @@ namespace BurgerHousWPF
                 AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), TrippleCheeseburgerTxt.Text.Trim(), buyingWindow.NewDopIngredient());
             }
         }
+
+        private void SandersDeLuxBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(4);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), SandersDeLuxNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void ChiefburgerDeLuxBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(5);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), ChiefburgerDeLuxNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void ChiefburgerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(6);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), ChiefburgerNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void CheeseburgerDeLuxNameBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(7);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), CheeseburgerDeLuxNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void CheeseburgerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(8);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), CheeseburgerNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void ChickenburgerrBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(9);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), ChickenburgerNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void ChiefburgerjuniorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(10);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), ChiefburgerjuniorNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
 
         private void AddToCart(int burgerPrice, int burgerAmount, string burgerName, string dopIngredient)
         {
@@ -329,6 +412,56 @@ namespace BurgerHousWPF
             {
                 MessageBox.Show("У вас пустая корзина");
             }
+        }
+
+        private void bigSandersBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(BigSandersTxt, priceBigSandersTxt, 1);
+        }
+
+        private void bigTastyStackPanel_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(bigTastyTxt, pricebigTastyTxt, 2);
+        }
+
+        private void TrippleCheeseburgerBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(TrippleCheeseburgerTxt, priceTrippleCheeseburgerTxt, 3);
+        }
+
+        private void SandersDeLuxBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(SandersDeLuxNameTxtBlock, SandersDeLuxPriceTxtBlock, 4);
+        }
+
+        private void ChiefburgerDeLuxBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(ChiefburgerDeLuxNameTxtBlock, ChiefburgerDeLuxPriceTxtBlock, 5);
+        }
+
+        private void ChiefburgerBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(ChiefburgerNameTxtBlock, ChiefburgerPriceTxtBlock, 6);
+        }
+
+        private void CheeseburgerDeLuxBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(CheeseburgerDeLuxNameTxtBlock, CheeseburgerDeLuxPriceTxtBlock, 7);
+        }
+
+        private void CheeseburgerBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(CheeseburgerNameTxtBlock, CheeseburgerPriceTxtBlock, 8);
+        }
+
+        private void ChickenburgerBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(ChickenburgerNameTxtBlock, ChickenburgerPriceTxtBlock, 9);
+        }
+
+        private void ChiefburgerjuniorBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(ChiefburgerjuniorNameTxtBlock, ChiefburgerjuniorPriceTxtBlock, 10);
         }
     }
 }
