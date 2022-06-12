@@ -245,11 +245,11 @@ namespace BurgerHousWPF
 
             if (buyingWindow.DialogResult == true)
             {
-                cartsLabel.Content = $"{cartsItem += 1}";
+                cartsLabel.Content = $"{cartsItem += newBurgerAmount}";
                 //Добавление выбранной еды в корзину
-                basketListBox.Items.Add($"{BigSandersTxt.Text.Trim()} - {newBurgerPrice * newBurgerAmount}Р");
+                basketListBox.Items.Add($"{BigSandersTxt.Text.Trim()} - ({newBurgerAmount}) - {newBurgerPrice}Р");
                 //Изменение строки для рассчета итоговой стоимости
-                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice * newBurgerAmount)}Р";
+                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice)}Р";
             }
         }
         private void bitTastyBtn_Click(object sender, RoutedEventArgs e)
@@ -268,11 +268,11 @@ namespace BurgerHousWPF
 
             if (buyingWindow.DialogResult == true)
             {
-                cartsLabel.Content = $"{cartsItem += 1}";
+                cartsLabel.Content = $"{cartsItem += newBurgerAmount}";
                 //Добавление выбранной еды в корзину
-                basketListBox.Items.Add($"{bigTastyTxt.Text.Trim()} - {newBurgerPrice * newBurgerAmount}Р");
+                basketListBox.Items.Add($"{bigTastyTxt.Text.Trim()}({newBurgerAmount}шт.) - {newBurgerPrice}Р");
                 //Изменение строки для рассчета итоговой стоимости
-                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice * newBurgerAmount)}Р";
+                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice)}Р";
             }
         }
 
@@ -294,9 +294,9 @@ namespace BurgerHousWPF
             {
                 cartsLabel.Content = $"{cartsItem += newBurgerAmount}";
                 //Добавление выбранной еды в корзину
-                basketListBox.Items.Add($"{TrippleCheeseburgerTxt.Text.Trim()} - {newBurgerPrice * newBurgerAmount}Р");
+                basketListBox.Items.Add($"{TrippleCheeseburgerTxt.Text.Trim()}({newBurgerAmount}) - {newBurgerPrice}Р");
                 //Изменение строки для рассчета итоговой стоимости
-                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice * newBurgerAmount)}Р";
+                itogoPriceLabel.Content = $"{itogoPrice += (newBurgerPrice)}Р";
             }
         }
 
@@ -312,7 +312,8 @@ namespace BurgerHousWPF
                     {
                         itogoPriceLabel.Content = $"{itogoPrice -= Convert.ToInt32(selectItemPrice[1].TrimEnd('Р'))}Р";
                     }
-                    cartsLabel.Content = $"{cartsItem -= 1}";
+                    //Обрезка количества бургеров для удаление
+                    cartsLabel.Content = $"{cartsItem -= Convert.ToInt32(selectItemPrice[0].Split('(')[1].Split('ш')[0])}";
                     basketListBox.Items.Remove(basketListBox.SelectedItem);
                 }
             }

@@ -23,6 +23,8 @@ namespace BurgerHousWPF
         int burgerPrice;
         //Цена за все бургеры
         int fullBurgerPrice;
+        //Доп ингредиенты
+        int bekonCount, cheeseCount;
         int BurgerAmount = 1;
         public BuyingWindow(int price, int BurgerCal, string BurgerDescription, ImageSource BurgerImage, string BurgerNameLabel)
         {
@@ -132,6 +134,36 @@ namespace BurgerHousWPF
             burgerAmount.Content = BurgerAmount;
             fullBurgerPrice += burgerPrice;
             addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
+        }
+
+        private void addBekon_Click(object sender, RoutedEventArgs e)
+        {
+            if (bekonCount == BurgerAmount * 2)
+            {
+                MessageBox.Show("Вы больше не можете добавить");
+            }
+            else
+            {
+                fullBurgerPrice += 25;
+                bekonCount += 1;
+                bekonAmountLabel.Content = bekonCount;
+                addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
+            }
+        }
+
+        private void deleteBekon_Click(object sender, RoutedEventArgs e)
+        {
+            if (bekonCount == 0)
+            {
+                MessageBox.Show("Вы больше не можете убрать");
+            }
+            else
+            {
+                fullBurgerPrice -= 25;
+                bekonCount -= 1;
+                bekonAmountLabel.Content = bekonCount;
+                addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
+            }
         }
     }
 }
