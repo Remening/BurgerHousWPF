@@ -38,12 +38,13 @@ namespace BurgerHousWPF
             else
             {
                 MessageBox.Show($"Ваш заказ успешно оплачен, ожидайте, вам его принесут\n Ваш номер заказа: {rnd.Next(0, 999)}");
+                this.Close();
             }
         }
         //Отмена оплаты
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         // Use the DataObject.Pasting Handler 
