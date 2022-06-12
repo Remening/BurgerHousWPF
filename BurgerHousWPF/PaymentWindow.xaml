@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BurgerHousWPF"
         mc:Ignorable="d"
-        Title="PaymentWindow" Height="450" Width="265" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="PaymentWindow" Height="450" Width="265" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Получено от клиента.:" VerticalAlignment="Top" FontSize="24"/>
         <TextBox x:Name="receivedFromCustomerTxtBox" DataObject.Pasting="TextBoxPasting" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="32" TextChanged="receivedFromCustomerTxtBox_TextChanged" PreviewTextInput="PreviewTextInput"/>

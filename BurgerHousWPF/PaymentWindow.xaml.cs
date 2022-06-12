@@ -20,7 +20,7 @@ namespace BurgerHousWPF
     /// </summary>
     public partial class PaymentWindow : Window
     {
-        private static readonly Regex _regex = new Regex("[^0-9.-]+"); //regex, который соответствует запрещенному тексту
+        private static readonly Regex _regex = new Regex("[^0-9]"); //regex, который соответствует запрещенному тексту
         Random rnd = new Random();
         public PaymentWindow(int cartPrice)
         {
@@ -38,12 +38,14 @@ namespace BurgerHousWPF
             else
             {
                 MessageBox.Show($"Ваш заказ успешно оплачен, ожидайте, вам его принесут\n Ваш номер заказа: {rnd.Next(0, 999)}");
+                DialogResult = true;
                 this.Close();
             }
         }
         //Отмена оплаты
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            DialogResult = false;
             this.Close();
         }
 
@@ -63,7 +65,6 @@ namespace BurgerHousWPF
                 e.CancelCommand();
             }
         }
-        
 
         private void receivedFromCustomerTxtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -74,7 +75,7 @@ namespace BurgerHousWPF
             surrenderTxtBlock.Text = surrender.ToString();
         }
 
-        private void PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private new void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !IsTextAllowed(e.Text);
         }
@@ -82,6 +83,11 @@ namespace BurgerHousWPF
         private static bool IsTextAllowed(string text)
         {
             return !_regex.IsMatch(text);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+
         }
     }
 }

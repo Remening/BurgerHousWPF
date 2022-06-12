@@ -312,9 +312,18 @@ namespace BurgerHousWPF
             {
                 PaymentWindow paymentWindow = new PaymentWindow(itogoPrice);
                 paymentWindow.ShowDialog();
-                basketListBox.Items.Clear();
-                itogoPriceLabel.Content = "0Р";
-                cartsLabel.Content = 0;
+                if(paymentWindow.DialogResult == false)
+                {
+
+                }
+                else
+                {
+                    basketListBox.Items.Clear();
+                    itogoPriceLabel.Content = "0Р";
+                    cartsLabel.Content = 0;
+                    cartsItem = 0;
+                    itogoPrice = 0;
+                }
             }
             else
             {
