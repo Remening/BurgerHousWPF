@@ -19,17 +19,21 @@ namespace BurgerHousWPF
     /// </summary>
     public partial class BuyingWindow : Window
     {
+        //Цена за 1 бургер с добавками 
         int burgerPrice;
+        //Цена за все бургеры
+        int fullBurgerPrice;
         int BurgerAmount = 1;
         public BuyingWindow(int price, int BurgerCal, string BurgerDescription, ImageSource BurgerImage, string BurgerNameLabel)
         {
-            //TODO Сделать загрузку выбранного бургера
+            //TODO Сделать кнопки добавление и убирание бургера работающими
             InitializeComponent();
             burgerCal.Content += BurgerCal.ToString();
             burgerDescription.Text = $"{BurgerDescription}";
             burgerImage.Source = BurgerImage;
             burgerNameLabel.Content = BurgerNameLabel;
             burgerPrice = price;
+            fullBurgerPrice = price;
             addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
             burgerAmount.Content = BurgerAmount;
         }
@@ -53,7 +57,7 @@ namespace BurgerHousWPF
 
         public int NewBurgerPrice()
         {
-            return burgerPrice;
+            return fullBurgerPrice;
         }
 
         public int NewAmountBurgers()
@@ -64,47 +68,47 @@ namespace BurgerHousWPF
         //Добавление двойной порции сыра (25р)
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = MessageBox.Show("Применить ко всем бургерам?", "Доп ингредиенты", MessageBoxButton.YesNo);
-            if (messageBoxResult == MessageBoxResult.Yes)
-            {
-                burgerPrice += 25 * BurgerAmount;
-                addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
-            }
-            else if (messageBoxResult == MessageBoxResult.No)
-            {
-                burgerPrice += 25;
-                addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
-            }
+            //MessageBoxResult messageBoxResult = MessageBox.Show("Применить ко всем бургерам?", "Доп ингредиенты", MessageBoxButton.YesNo);
+            //if (messageBoxResult == MessageBoxResult.Yes)
+            //{
+                fullBurgerPrice += 25 * BurgerAmount;
+                addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
+            //}
+            //else if (messageBoxResult == MessageBoxResult.No)
+            //{
+            //    fullBurgerPrice += 25;
+            //    addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
+            //}
         }
 
         //Удаление двойной порции сыра (25р)
         private void doubleCheeseCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            burgerPrice -= 25;
-            addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
+            fullBurgerPrice -= 25 * BurgerAmount;
+            addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
         }
 
         //Добавление пепперони (35р)
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = MessageBox.Show("Применить ко всем бургерам?", "Доп ингредиенты", MessageBoxButton.YesNo);
-            if (messageBoxResult == MessageBoxResult.Yes)
-            {
-                burgerPrice += 25 * BurgerAmount;
-                addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
-            }
-            else if (messageBoxResult == MessageBoxResult.No)
-            {
-                burgerPrice += 25;
-                addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
-            }
+            //MessageBoxResult messageBoxResult = MessageBox.Show("Применить ко всем бургерам?", "Доп ингредиенты", MessageBoxButton.YesNo);
+            //if (messageBoxResult == MessageBoxResult.Yes)
+            //{
+                fullBurgerPrice += 25 * BurgerAmount;
+                addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
+            //}
+            //else if (messageBoxResult == MessageBoxResult.No)
+            //{
+            //    fullBurgerPrice += 25;
+            //    addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
+            //}
         }
 
         //Удаление пепперони (35р)
         private void peperoniCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            burgerPrice -= 35;
-            addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
+            fullBurgerPrice -= 35 * BurgerAmount;
+            addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
         }
 
         private void deleteBurgers_Click(object sender, RoutedEventArgs e)
@@ -117,8 +121,8 @@ namespace BurgerHousWPF
             {
                 BurgerAmount -= 1;
                 burgerAmount.Content = BurgerAmount;
-                burgerPrice -= burgerPrice;
-                addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
+                fullBurgerPrice -= burgerPrice;
+                addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
             }
         }
 
@@ -126,8 +130,8 @@ namespace BurgerHousWPF
         {
             BurgerAmount += 1;
             burgerAmount.Content = BurgerAmount;
-            burgerPrice += burgerPrice * BurgerAmount;
-            addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
+            fullBurgerPrice += burgerPrice;
+            addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
         }
     }
 }
