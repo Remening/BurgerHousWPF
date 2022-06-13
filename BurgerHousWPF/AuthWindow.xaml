@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BurgerHousWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing_1" WindowStartupLocation="CenterScreen">
+        Title="AlexBurger" Height="450" Width="800" Closing="Window_Closing_1" WindowStartupLocation="CenterScreen" Icon="/icons/AlexBurgerIcon64X.png">
     <Window.Style>
         <Style/>
     </Window.Style>

@@ -98,7 +98,8 @@ namespace BurgerHousWPF
             {
                 BurgerAmount -= 1;
                 burgerAmount.Content = BurgerAmount;
-                fullBurgerPrice -= burgerPrice;
+                //только бекон
+                fullBurgerPrice -= burgerPrice + (25 * bekonCount);
                 addToCartsBtn.Content = $"Добавить в корзину - {fullBurgerPrice}";
             }
         }

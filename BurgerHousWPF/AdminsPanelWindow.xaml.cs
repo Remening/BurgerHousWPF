@@ -24,6 +24,7 @@ namespace BurgerHousWPF
         public AdminsPanelWindow()
         {
             InitializeComponent();
+            TablesGrid.Visibility = Visibility.Hidden;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -43,7 +44,7 @@ namespace BurgerHousWPF
         {
             listBoxAmidnsPanel.ItemsSource = tdb.TableViewListSotrudniki();
         }
-
+            
         private void loadPovarBtn_Click(object sender, RoutedEventArgs e)
         {
             listBoxAmidnsPanel.ItemsSource = tdb.TableViewListPovar();
@@ -52,6 +53,31 @@ namespace BurgerHousWPF
         private void loadFullMenuBtn_Click(object sender, RoutedEventArgs e)
         {
             listBoxAmidnsPanel.ItemsSource = tdb.TableViewListFullMenu();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainGrid.Visibility = Visibility.Hidden;
+            TablesGrid.Visibility = Visibility.Visible;
+        }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainGrid.Visibility = Visibility.Visible;
+            TablesGrid.Visibility = Visibility.Hidden;
+        }
+
+        private void listBoxAmidnsPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Вы хотите добавить новое поле?", "Окно", MessageBoxButton.YesNo);
+            if(messageBoxResult == MessageBoxResult.Yes)
+            {
+
+            }
+            else if (messageBoxResult == MessageBoxResult.No)
+            {
+
+            }
         }
     }
 }

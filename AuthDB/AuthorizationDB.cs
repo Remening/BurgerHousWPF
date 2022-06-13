@@ -423,6 +423,44 @@ namespace ConnectionBD
                 return fieldNames;
             }
         }
+        //INSERT INTO Заказ VALUES(11, 5, 234125, 'Сандерс', 'Готовится', 149, '2022-02-02');
+
+        public int LastCheckID()
+        {
+            int checkID = 0;
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                string query = $"select ID_Заказа from Заказ";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        checkID++;
+                    }
+                }
+
+                return checkID;
+            }
+        }
+        public void AddNewZakaz(int idSotrudnika, int nomerZakaza,string infoZaka, int zakazPrice, string zakazDate)
+        {
+            infoZaka.Trim(); zakazDate.Trim();
+            int id = LastCheckID();
+
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                string queryCreateTable = $"INSERT INTO Заказ VALUES({id}, {idSotrudnika}, {nomerZakaza}, '{infoZaka}', 'Готовится', {zakazPrice}, '{zakazDate}')";
+                SqlCommand command = new SqlCommand(queryCreateTable, connection);
+                command.ExecuteNonQuery();
+            }
+        }
 
         public void UpdateDB()
         {
