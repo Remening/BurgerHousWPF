@@ -264,10 +264,48 @@ namespace ConnectionBD
                 {
                     while (reader.Read())
                     {
-                        duck.Add($"{reader.GetString(0).Trim()}\t{reader.GetString(1).Trim()}\t\t{reader.GetDateTime(2)}\t{reader.GetInt32(3).ToString().Trim()}\t\t{reader.GetString(4).Trim()}\t\t{reader.GetInt32(5).ToString().Trim()}\t{reader.GetString(6).Trim()}\t\t\t\t{reader.GetString(7).Trim()}\t{reader.GetString(8).Trim()}\t{reader.GetString(9).Trim()}");
+                        duck.Add($"{reader.GetString(0).Trim()}\t{reader.GetString(1).Trim()}\t\t{reader.GetDateTime(2)}\t{reader.GetInt32(3).ToString().Trim()}\t\t{reader.GetString(4).Trim()}\t\t{reader.GetString(5).ToString().Trim()}\t{reader.GetString(6).Trim()}\t\t\t\t{reader.GetString(7).Trim()}\t{reader.GetString(8).Trim()}\t{reader.GetString(9).Trim()}");
                     }
                 }
                 return duck;
+            }
+        }
+
+        public List<string> TableViewListSotrudnikiNew()
+        {
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                string query = $"select Роль, ФИО, ДатаРождения, Возраст, ПаспортныеДанные, НомерТелефона, АдресПроживания, Email, Логин, Пароль from Кассир";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                List<string> duck = new List<string>();
+                string[] cashierColumnName = { "Роль", "ФИО", "ДатаРождения", "Возраст", "ПаспортныеДанные", "НомерТелефона", "АдресПроживания", "Email", "Логин", "Пароль" };
+                duck.AddRange(cashierColumnName);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        duck.Add($"{reader.GetString(0).Trim()}\t{reader.GetString(1).Trim()}\t\t{reader.GetDateTime(2)}\t{reader.GetInt32(3).ToString().Trim()}\t\t{reader.GetString(4).Trim()}\t\t{reader.GetString(5).ToString().Trim()}\t{reader.GetString(6).Trim()}\t\t\t\t{reader.GetString(7).Trim()}\t{reader.GetString(8).Trim()}\t{reader.GetString(9).Trim()}");
+                    }
+                }
+                return duck;
+            }
+        }
+
+        public void TableAddNewCashier(string role, string fio, string birthday, int age, string passport, string telephone, string adress, string email, string login, string password)
+        {
+            int id = LastCheckID("ID_Кассира","Кассир");
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                string query = $"insert into Кассир values ({id}, '{role.Trim()}', '{fio.Trim()}', '{birthday.Trim()}', {age}, '{passport.Trim()}', '{telephone.Trim()}', '{telephone.Trim()}', '{email.Trim()}', '{login.Trim()}','{password.Trim()}');";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
             }
         }
 
@@ -425,14 +463,14 @@ namespace ConnectionBD
         }
         //INSERT INTO Заказ VALUES(11, 5, 234125, 'Сандерс', 'Готовится', 149, '2022-02-02');
 
-        public int LastCheckID()
+        public int LastCheckID(string Id, string table)
         {
             int checkID = 0;
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 connection.Open();
 
-                string query = $"select ID_Заказа from Заказ";
+                string query = $"select {Id} from {table}";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -450,7 +488,7 @@ namespace ConnectionBD
         public void AddNewZakaz(int idSotrudnika, int nomerZakaza,string infoZaka, int zakazPrice, string zakazDate)
         {
             infoZaka.Trim(); zakazDate.Trim();
-            int id = LastCheckID();
+            int id = LastCheckID("ID_Заказа", "Заказ");
 
             using (SqlConnection connection = new SqlConnection(connectString))
             {

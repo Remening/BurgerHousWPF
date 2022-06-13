@@ -40,19 +40,24 @@ namespace BurgerHousWPF
             }
         }
 
+        string listboxLoadTableName;
+
         private void loadSotrudnikiBtn_Click(object sender, RoutedEventArgs e)
         {
             listBoxAmidnsPanel.ItemsSource = tdb.TableViewListSotrudniki();
+            listboxLoadTableName = "Кассир";
         }
             
         private void loadPovarBtn_Click(object sender, RoutedEventArgs e)
         {
             listBoxAmidnsPanel.ItemsSource = tdb.TableViewListPovar();
+            listboxLoadTableName = "Повары";
         }
 
         private void loadFullMenuBtn_Click(object sender, RoutedEventArgs e)
         {
             listBoxAmidnsPanel.ItemsSource = tdb.TableViewListFullMenu();
+            listboxLoadTableName = "Продукты";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -72,12 +77,29 @@ namespace BurgerHousWPF
             MessageBoxResult messageBoxResult = MessageBox.Show("Вы хотите добавить новое поле?", "Окно", MessageBoxButton.YesNo);
             if(messageBoxResult == MessageBoxResult.Yes)
             {
-                EditDBWindow editDBWindow = new EditDBWindow();
-                editDBWindow.ShowDialog();
+                if (listboxLoadTableName.Equals("Кассир"))
+                {
+                    listboxLoadTableName = "НовыйКассир";
+                    if (listBoxAmidnsPanel.Items.Count > 0)
+                    {
+                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName);
+                        editDBWindow.ShowDialog();
+                    }
+                }
+                if (listboxLoadTableName.Equals("Повары"))
+                {
+                    listboxLoadTableName = "НовыйПовар";
+                    if (listBoxAmidnsPanel.Items.Count > 0)
+                    {
+                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName);
+                        editDBWindow.ShowDialog();
+                    }
+                }
             }
             else if (messageBoxResult == MessageBoxResult.No)
             {
-
+                EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName);
+                editDBWindow.ShowDialog();
             }
         }
     }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ConnectionBD;
 
 namespace BurgerHousWPF
 {
@@ -19,14 +20,51 @@ namespace BurgerHousWPF
     /// </summary>
     public partial class EditDBWindow : Window
     {
-        public EditDBWindow()
+        TableDB tdb = new TableDB();
+        public EditDBWindow(string tableSelect)
         {
             InitializeComponent();
+            AddNewCashierGrid.Visibility = Visibility.Hidden;
+            FullMenuGrid.Visibility = Visibility.Hidden;
+            UpdateCashierGrid.Visibility = Visibility.Hidden;
+            PovarGrid.Visibility = Visibility.Hidden;
+
+            if (tableSelect.Equals("Кассир"))
+            {
+                UpdateCashierGrid.Visibility = Visibility.Visible;
+            }
+            else if (tableSelect.Equals("Повары"))
+            {
+                PovarGrid.Visibility = Visibility.Visible;
+            }
+            else if (tableSelect.Equals("Продукты"))
+            {
+                FullMenuGrid.Visibility = Visibility.Visible;
+            }
+            else if (tableSelect.Equals("НовыйКассир"))
+            {
+                AddNewCashierGrid.Visibility = Visibility.Visible;
+            }
+            else if (tableSelect.Equals("НовыйПовар"))
+            {
+
+            }
+            
+        }
+
+        //private void AddNewCashierGrid_Loaded(object sender, RoutedEventArgs e, string role, string fio, string birthday, string age, string passport, string telephone, string adress, string email, string login, string password)
+        //{
+        //}
+
+        //Кнопка добавления нового сотрудника
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            tdb.TableAddNewCashier("Кассир", fioTxtBox.Text, birthdayTxtBox.Text, Convert.ToInt32(ageTxtBox.Text), passportTxtBox.Text, telephoneTxtBox.Text, adressTxtBox.Text, emailTxtBox.Text, loginTxtBox.Text, passwordTxtBox.Text);
         }
 
         private void AddNewCashierGrid_Loaded(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
