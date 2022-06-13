@@ -149,6 +149,7 @@ namespace ConnectionBD
         internal SqlDataAdapter adapter;
         internal DataTable usersTable;
 
+
         public async Task CreateTableDB(string tableName)
         {
             tableName += tableName.Trim();
@@ -301,30 +302,30 @@ namespace ConnectionBD
             }
         }
 
-        public List<string> TableViewListSotrudnikiNew()
-        {
-            using (SqlConnection connection = new SqlConnection(connectString))
-            {
-                connection.Open();
+        //public List<string> TableViewListSotrudnikiNew()
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectString))
+        //    {
+        //        connection.Open();
 
-                string query = $"select Роль, ФИО, ДатаРождения, Возраст, ПаспортныеДанные, НомерТелефона, АдресПроживания, Email, Логин, Пароль from Кассир";
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
+        //        string query = $"select Роль, ФИО, ДатаРождения, Возраст, ПаспортныеДанные, НомерТелефона, АдресПроживания, Email, Логин, Пароль from Кассир";
+        //        SqlCommand command = new SqlCommand(query, connection);
+        //        SqlDataReader reader = command.ExecuteReader();
 
-                List<string> duck = new List<string>();
-                string[] cashierColumnName = { "Роль", "ФИО", "ДатаРождения", "Возраст", "ПаспортныеДанные", "НомерТелефона", "АдресПроживания", "Email", "Логин", "Пароль" };
-                duck.AddRange(cashierColumnName);
+        //        List<string> duck = new List<string>();
+        //        string[] cashierColumnName = { "Роль", "ФИО", "ДатаРождения", "Возраст", "ПаспортныеДанные", "НомерТелефона", "АдресПроживания", "Email", "Логин", "Пароль" };
+        //        duck.AddRange(cashierColumnName);
 
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        duck.Add($"{reader.GetString(0).Trim()}\t{reader.GetString(1).Trim()}\t\t{reader.GetDateTime(2)}\t{reader.GetInt32(3).ToString().Trim()}\t\t{reader.GetString(4).Trim()}\t\t{reader.GetString(5).ToString().Trim()}\t{reader.GetString(6).Trim()}\t\t\t\t{reader.GetString(7).Trim()}\t{reader.GetString(8).Trim()}\t{reader.GetString(9).Trim()}");
-                    }
-                }
-                return duck;
-            }
-        }
+        //        if (reader.HasRows)
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                duck.Add($"{reader.GetString(0).Trim()}\t{reader.GetString(1).Trim()}\t\t{reader.GetDateTime(2)}\t{reader.GetInt32(3).ToString().Trim()}\t\t{reader.GetString(4).Trim()}\t\t{reader.GetString(5).ToString().Trim()}\t{reader.GetString(6).Trim()}\t\t\t\t{reader.GetString(7).Trim()}\t{reader.GetString(8).Trim()}\t{reader.GetString(9).Trim()}");
+        //            }
+        //        }
+        //        return duck;
+        //    }
+        //}
 
         public void TableAddNewCashier(string role, string fio, string birthday, int age, string passport, string telephone, string adress, string email, string login, string password)
         {
@@ -339,57 +340,56 @@ namespace ConnectionBD
             }
         }
 
-        public List<string> TableViewListPovar()
+        //public List<string> TableViewListPovar()
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectString))
+        //    {
+        //        connection.Open();
+
+        //        string query = $"select Роль, ФИО, ДатаРождения, Возраст, ПаспортныеДанные, НомерТелефона, АдресПроживания, Email from Повары";
+        //        SqlCommand command = new SqlCommand(query, connection);
+        //        SqlDataReader reader = command.ExecuteReader();
+
+        //        List<string> duck = new List<string>();
+        //        duck.Add("Роль\tФИО\t\t\t\t\tДатаРождения\t\tВозраст\t\tПаспортныеДанные\tНомерТелефона\tАдресПроживания\t\t\t\tEmail");
+
+        //        if (reader.HasRows)
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                duck.Add($"{reader.GetString(0).Trim()}\t{reader.GetString(1).Trim()}\t\t{reader.GetDateTime(2)}\t{reader.GetInt32(3).ToString().Trim()}\t\t{reader.GetString(4).Trim()}\t\t{reader.GetInt32(5).ToString().Trim()}\t{reader.GetString(6).Trim()}\t\t\t\t{reader.GetString(7).Trim()}");
+        //            }
+        //        }
+        //        return duck;
+        //    }
+        //}
+
+        //public List<string> TableViewListFullMenu()
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectString))
+        //    {
+        //        connection.Open();
+
+        //        string query = $"select ТипПродукта, Название, Цена from Продукты";
+        //        SqlCommand command = new SqlCommand(query, connection);
+        //        SqlDataReader reader = command.ExecuteReader();
+
+        //        List<string> duck = new List<string>();
+        //        duck.Add("Тип Продукта\tНазвание(Цена)");
+
+        //        if (reader.HasRows)
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                duck.Add($"{reader.GetString(0).Trim()}\t\t{reader.GetString(1).Trim()}({reader.GetInt32(2).ToString().Trim()}Р.)");
+        //            }
+        //        }
+        //        return duck;
+        //    }
+        //}
+        public DataView TableViewSotrudniki()
         {
-            using (SqlConnection connection = new SqlConnection(connectString))
-            {
-                connection.Open();
-
-                string query = $"select Роль, ФИО, ДатаРождения, Возраст, ПаспортныеДанные, НомерТелефона, АдресПроживания, Email from Повары";
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                List<string> duck = new List<string>();
-                duck.Add("Роль\tФИО\t\t\t\t\tДатаРождения\t\tВозраст\t\tПаспортныеДанные\tНомерТелефона\tАдресПроживания\t\t\t\tEmail");
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        duck.Add($"{reader.GetString(0).Trim()}\t{reader.GetString(1).Trim()}\t\t{reader.GetDateTime(2)}\t{reader.GetInt32(3).ToString().Trim()}\t\t{reader.GetString(4).Trim()}\t\t{reader.GetInt32(5).ToString().Trim()}\t{reader.GetString(6).Trim()}\t\t\t\t{reader.GetString(7).Trim()}");
-                    }
-                }
-                return duck;
-            }
-        }
-
-        public List<string> TableViewListFullMenu()
-        {
-            using (SqlConnection connection = new SqlConnection(connectString))
-            {
-                connection.Open();
-
-                string query = $"select ТипПродукта, Название, Цена from Продукты";
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                List<string> duck = new List<string>();
-                duck.Add("Тип Продукта\tНазвание(Цена)");
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        duck.Add($"{reader.GetString(0).Trim()}\t\t{reader.GetString(1).Trim()}({reader.GetInt32(2).ToString().Trim()}Р.)");
-                    }
-                }
-                return duck;
-            }
-        }
-
-        public DataView SelectTableView(string tableName)
-        {
-            string query = $"SELECT * FROM {tableName}";
+            string query = $"select Роль, ФИО, ДатаРождения, Возраст, ПаспортныеДанные, НомерТелефона, АдресПроживания, Email, Логин, Пароль from Кассир";
             usersTable = new DataTable();
             SqlConnection connection = null;
 
@@ -415,9 +415,63 @@ namespace ConnectionBD
             return null;
         }
 
-        public DataView SelectTableView(string tableName, bool clients)
+        public DataView TableViewSotrudniki(bool st)
         {
-            string query = $"SELECT * FROM {tableName} WHERE role = 'buyer'";
+            string query = $"select * from Кассир";
+            usersTable = new DataTable();
+            SqlConnection connection = null;
+
+            try
+            {
+                connection = new SqlConnection(connectString);
+                SqlCommand command = new SqlCommand(query, connection);
+                adapter = new SqlDataAdapter(command);
+
+                connection.Open();
+                adapter.Fill(usersTable);
+                return usersTable.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+            return null;
+        }
+        public DataView TableViewPovar()
+        {
+            string query = $"select Роль, ФИО, ДатаРождения, Возраст, ПаспортныеДанные, НомерТелефона, АдресПроживания, Email from Повары";
+            usersTable = new DataTable();
+            SqlConnection connection = null;
+
+            try
+            {
+                connection = new SqlConnection(connectString);
+                SqlCommand command = new SqlCommand(query, connection);
+                adapter = new SqlDataAdapter(command);
+
+                connection.Open();
+                adapter.Fill(usersTable);
+                return usersTable.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+            return null;
+        }
+        public DataView TableViewFullMenu()
+        {
+            string query = $"select ТипПродукта, Название, Цена from Продукты";
             usersTable = new DataTable();
             SqlConnection connection = null;
 
@@ -443,37 +497,65 @@ namespace ConnectionBD
             return null;
         }
 
-        public DataView SelectColumnView(string columnName, string tableName)
-        {
-            string query = $"SELECT {columnName} FROM {tableName}";
-            usersTable = new DataTable();
-            SqlConnection connection = null;
+        //public DataView SelectTableView(string tableName, bool clients)
+        //{
+        //    string query = $"SELECT * FROM {tableName} WHERE role = 'buyer'";
+        //    usersTable = new DataTable();
+        //    SqlConnection connection = null;
 
-            try
-            {
-                connection = new SqlConnection(connectString);
-                SqlCommand command = new SqlCommand(query, connection);
+        //    try
+        //    {
+        //        connection = new SqlConnection(connectString);
+        //        SqlCommand command = new SqlCommand(query, connection);
+        //        adapter = new SqlDataAdapter(command);
 
-                adapter = new SqlDataAdapter(command)
-                {
-                    InsertCommand = new SqlCommand("sp_Users", connection)
-                };
+        //        connection.Open();
+        //        adapter.Fill(usersTable);
+        //        return usersTable.DefaultView;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (connection != null)
+        //            connection.Close();
+        //    }
+        //    return null;
+        //}
 
-                connection.Open();
-                adapter.Fill(usersTable);
-                return usersTable.DefaultView;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (connection != null)
-                    connection.Close();
-            }
-            return null;
-        }
+        //public DataView SelectColumnView(string columnName, string tableName)
+        //{
+        //    string query = $"SELECT {columnName} FROM {tableName}";
+        //    usersTable = new DataTable();
+        //    SqlConnection connection = null;
+
+        //    try
+        //    {
+        //        connection = new SqlConnection(connectString);
+        //        SqlCommand command = new SqlCommand(query, connection);
+
+        //        adapter = new SqlDataAdapter(command)
+        //        {
+        //            InsertCommand = new SqlCommand("sp_Users", connection)
+        //        };
+
+        //        connection.Open();
+        //        adapter.Fill(usersTable);
+        //        return usersTable.DefaultView;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (connection != null)
+        //            connection.Close();
+        //    }
+        //    return null;
+        //}
 
         public List<string> TableColumn(string tableName)
         {
@@ -531,6 +613,7 @@ namespace ConnectionBD
 
         public void UpdateDB()
         {
+            TableViewSotrudniki(true);
             SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter);
             adapter.Update(usersTable);
         }

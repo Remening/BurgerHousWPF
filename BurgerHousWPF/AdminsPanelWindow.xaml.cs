@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,19 +46,19 @@ namespace BurgerHousWPF
 
         private void loadSotrudnikiBtn_Click(object sender, RoutedEventArgs e)
         {
-            anyTableDataGrid.ItemsSource = tdb.TableViewListSotrudniki();
+            anyTableDataGrid.ItemsSource = tdb.TableViewSotrudniki();
             listboxLoadTableName = "Кассир";
         }
             
         private void loadPovarBtn_Click(object sender, RoutedEventArgs e)
         {
-            listBoxAmidnsPanel.ItemsSource = tdb.TableViewListPovar();
+            anyTableDataGrid.ItemsSource = tdb.TableViewPovar();
             listboxLoadTableName = "Повары";
         }
 
         private void loadFullMenuBtn_Click(object sender, RoutedEventArgs e)
         {
-            listBoxAmidnsPanel.ItemsSource = tdb.TableViewListFullMenu();
+            anyTableDataGrid.ItemsSource = tdb.TableViewFullMenu();
             listboxLoadTableName = "Продукты";
         }
 
@@ -73,38 +74,6 @@ namespace BurgerHousWPF
             TablesGrid.Visibility = Visibility.Hidden;
         }
 
-        private void listBoxAmidnsPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBoxResult messageBoxResult = MessageBox.Show("Вы хотите добавить новое поле?", "Окно", MessageBoxButton.YesNo);
-            if(messageBoxResult == MessageBoxResult.Yes)
-            {
-                if (listboxLoadTableName.Equals("Кассир"))
-                {
-                    listboxLoadTableName = "НовыйКассир";
-                    if (listBoxAmidnsPanel.Items.Count > 0)
-                    {
-                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName, "", "");
-                        editDBWindow.ShowDialog();
-                    }
-                }
-                if (listboxLoadTableName.Equals("Повары"))
-                {
-                    listboxLoadTableName = "НовыйПовар";
-                    if (listBoxAmidnsPanel.Items.Count > 0)
-                    {
-                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName, "", "");
-                        editDBWindow.ShowDialog();
-                    }
-                }
-            }
-            else if (messageBoxResult == MessageBoxResult.No)
-            {
-                string[] passport = listBoxAmidnsPanel.SelectedItem.ToString().Trim().Split(' ');
-                EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName, "", "");
-                editDBWindow.ShowDialog();
-            }
-        }
-
         private void openZakazGridBtn(object sender, RoutedEventArgs e)
         {
 
@@ -113,6 +82,46 @@ namespace BurgerHousWPF
         private void listBoxZakazPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void anyTableDataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            tdb.UpdateDB();
+        }
+
+        private void anyTableDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Вы хотите добавить новое поле?", "Окно", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                if (listboxLoadTableName.Equals("Кассир"))
+                {
+                    listboxLoadTableName = "НовыйКассир";
+                    if (anyTableDataGrid.Items.Count > 0)
+                    {
+                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName, "", "");
+                        editDBWindow.ShowDialog();
+                    }
+                }
+                else if (listboxLoadTableName.Equals("Повары"))
+                {
+                    listboxLoadTableName = "НовыйПовар";
+                    if (anyTableDataGrid.Items.Count > 0)
+                    {
+                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName, "", "");
+                        editDBWindow.ShowDialog();
+                    }
+                }
+            }
+            else if (messageBoxResult == MessageBoxResult.No)
+            {
+
+            }
+        }
+
+        private void amountFullZakBtnBtn(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("23957Р за 2022-06-14");
         }
     }
 }

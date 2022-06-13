@@ -37,6 +37,9 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="anyTableDataGrid" TargetType="{x:Type Thumb}">
+            <Setter Property="Background" Value="#8243D6"></Setter>
+        </Style>
         <Style TargetType="{x:Type StackPanel}">
             <Style.Triggers>
                 <Trigger Property="IsStylusCaptureWithin" Value="True">
