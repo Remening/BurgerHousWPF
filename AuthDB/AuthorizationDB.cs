@@ -295,6 +295,30 @@ namespace ConnectionBD
             }
         }
 
+        public List<string> TableViewListFullMenu()
+        {
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                string query = $"select ТипПродукта, Название, Цена from Продукты";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                List<string> duck = new List<string>();
+                duck.Add("Тип Продукта\tНазвание(Цена)");
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        duck.Add($"{reader.GetString(0).Trim()}\t\t{reader.GetString(1).Trim()}({reader.GetInt32(2).ToString().Trim()}Р.)");
+                    }
+                }
+                return duck;
+            }
+        }
+
         public DataView SelectTableView(string tableName)
         {
             string query = $"SELECT * FROM {tableName}";

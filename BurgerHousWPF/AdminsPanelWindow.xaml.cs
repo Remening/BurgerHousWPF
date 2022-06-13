@@ -48,5 +48,10 @@ namespace BurgerHousWPF
         {
             listBoxAmidnsPanel.ItemsSource = tdb.TableViewListPovar();
         }
+
+        private void loadFullMenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxAmidnsPanel.ItemsSource = tdb.TableViewListFullMenu();
+        }
     }
 }
