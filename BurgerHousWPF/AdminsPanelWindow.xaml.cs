@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ConnectionBD;
 
 namespace BurgerHousWPF
 {
@@ -19,6 +20,7 @@ namespace BurgerHousWPF
     /// </summary>
     public partial class AdminsPanelWindow : Window
     {
+        TableDB tdb = new TableDB();
         public AdminsPanelWindow()
         {
             InitializeComponent();
@@ -35,6 +37,16 @@ namespace BurgerHousWPF
             {
                 e.Cancel = true;
             }
+        }
+
+        private void loadSotrudnikiBtn_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxAmidnsPanel.ItemsSource = tdb.TableViewListSotrudniki();
+        }
+
+        private void loadPovarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxAmidnsPanel.ItemsSource = tdb.TableViewListPovar();
         }
     }
 }
