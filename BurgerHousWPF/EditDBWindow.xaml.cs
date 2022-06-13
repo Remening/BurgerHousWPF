@@ -21,13 +21,17 @@ namespace BurgerHousWPF
     public partial class EditDBWindow : Window
     {
         TableDB tdb = new TableDB();
-        public EditDBWindow(string tableSelect)
+        string passport, telephone;
+        public EditDBWindow(string tableSelect, string Passport, string Telephone)
         {
             InitializeComponent();
             AddNewCashierGrid.Visibility = Visibility.Hidden;
             FullMenuGrid.Visibility = Visibility.Hidden;
             UpdateCashierGrid.Visibility = Visibility.Hidden;
             PovarGrid.Visibility = Visibility.Hidden;
+
+            passport = Passport;
+            telephone = Telephone;
 
             if (tableSelect.Equals("Кассир"))
             {

@@ -25,6 +25,7 @@ namespace BurgerHousWPF
         {
             InitializeComponent();
             TablesGrid.Visibility = Visibility.Hidden;
+            ZakazGrid.Visibility = Visibility.Hidden;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -44,7 +45,7 @@ namespace BurgerHousWPF
 
         private void loadSotrudnikiBtn_Click(object sender, RoutedEventArgs e)
         {
-            listBoxAmidnsPanel.ItemsSource = tdb.TableViewListSotrudniki();
+            anyTableDataGrid.ItemsSource = tdb.TableViewListSotrudniki();
             listboxLoadTableName = "Кассир";
         }
             
@@ -82,7 +83,7 @@ namespace BurgerHousWPF
                     listboxLoadTableName = "НовыйКассир";
                     if (listBoxAmidnsPanel.Items.Count > 0)
                     {
-                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName);
+                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName, "", "");
                         editDBWindow.ShowDialog();
                     }
                 }
@@ -91,16 +92,27 @@ namespace BurgerHousWPF
                     listboxLoadTableName = "НовыйПовар";
                     if (listBoxAmidnsPanel.Items.Count > 0)
                     {
-                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName);
+                        EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName, "", "");
                         editDBWindow.ShowDialog();
                     }
                 }
             }
             else if (messageBoxResult == MessageBoxResult.No)
             {
-                EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName);
+                string[] passport = listBoxAmidnsPanel.SelectedItem.ToString().Trim().Split(' ');
+                EditDBWindow editDBWindow = new EditDBWindow(listboxLoadTableName, "", "");
                 editDBWindow.ShowDialog();
             }
+        }
+
+        private void openZakazGridBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void listBoxZakazPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

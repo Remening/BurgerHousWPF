@@ -247,6 +247,36 @@ namespace ConnectionBD
             }
         }
 
+        public List<string> FindThisCashierInTable(string passport, string telephone)
+        {
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                string query = $"select * from Кассир where ПаспортныеДанные = '{passport}' and НомерТелефона = '{telephone}'";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                List<string> duck = new List<string>();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        duck.Add(reader.GetString(1));
+                        duck.Add(reader.GetString(2));
+                        duck.Add(reader.GetString(3));
+                        duck.Add(reader.GetString(4));
+                        duck.Add(reader.GetString(5));
+                        duck.Add(reader.GetString(6));
+                        duck.Add(reader.GetString(7));
+                        duck.Add(reader.GetString(8));
+                        duck.Add(reader.GetString(9));
+                    }
+                }
+                return duck;
+            }
+        }
+
         public List<string> TableViewListSotrudniki()
         {
             using (SqlConnection connection = new SqlConnection(connectString))
@@ -258,13 +288,13 @@ namespace ConnectionBD
                 SqlDataReader reader = command.ExecuteReader();
 
                 List<string> duck = new List<string>();
-                duck.Add("Роль\tФИО\t\t\t\t\tДатаРождения\t\tВозраст\t\tПаспортныеДанные\tНомерТелефона\tАдресПроживания\t\t\t\t\t\tEmail\t\t\tЛогин\tПароль");
+                duck.Add("Роль|ФИО|ДатаРождения|Возраст|ПаспортныеДанные|НомерТелефона|АдресПроживания|Email|Логин|Пароль");
 
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        duck.Add($"{reader.GetString(0).Trim()}\t{reader.GetString(1).Trim()}\t\t{reader.GetDateTime(2)}\t{reader.GetInt32(3).ToString().Trim()}\t\t{reader.GetString(4).Trim()}\t\t{reader.GetString(5).ToString().Trim()}\t{reader.GetString(6).Trim()}\t\t\t\t{reader.GetString(7).Trim()}\t{reader.GetString(8).Trim()}\t{reader.GetString(9).Trim()}");
+                        duck.Add($"{reader.GetString(0).Trim()}|{reader.GetString(1).Trim()}|{reader.GetDateTime(2)}|{reader.GetInt32(3).ToString().Trim()}|{reader.GetString(4).Trim()}|{reader.GetString(5).ToString().Trim()}|{reader.GetString(6).Trim()}|{reader.GetString(7).Trim()}|{reader.GetString(8).Trim()}|{reader.GetString(9).Trim()}");
                     }
                 }
                 return duck;
@@ -413,7 +443,6 @@ namespace ConnectionBD
             return null;
         }
 
-
         public DataView SelectColumnView(string columnName, string tableName)
         {
             string query = $"SELECT {columnName} FROM {tableName}";
@@ -461,8 +490,8 @@ namespace ConnectionBD
                 return fieldNames;
             }
         }
+        
         //INSERT INTO Заказ VALUES(11, 5, 234125, 'Сандерс', 'Готовится', 149, '2022-02-02');
-
         public int LastCheckID(string Id, string table)
         {
             int checkID = 0;
@@ -505,26 +534,5 @@ namespace ConnectionBD
             SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter);
             adapter.Update(usersTable);
         }
-
-
-        //public async Task AddMemberDB()
-        //{
-
-        //}
-
-        //public async Task AddWeightDB()
-        //{
-
-        //}
-
-        //public async Task DataImportInDB()
-        //{
-
-        //}
-
-        //public async Task FindMemberDB()
-        //{
-
-        //}
     }
 }
