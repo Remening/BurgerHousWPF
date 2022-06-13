@@ -23,5 +23,10 @@ namespace BurgerHousWPF
         {
             InitializeComponent();
         }
+
+        private void AddNewCashierGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -72,7 +72,8 @@ namespace BurgerHousWPF
             MessageBoxResult messageBoxResult = MessageBox.Show("Вы хотите добавить новое поле?", "Окно", MessageBoxButton.YesNo);
             if(messageBoxResult == MessageBoxResult.Yes)
             {
-
+                EditDBWindow editDBWindow = new EditDBWindow();
+                editDBWindow.ShowDialog();
             }
             else if (messageBoxResult == MessageBoxResult.No)
             {
