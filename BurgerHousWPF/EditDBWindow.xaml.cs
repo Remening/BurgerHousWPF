@@ -63,7 +63,7 @@ namespace BurgerHousWPF
         //Кнопка добавления нового сотрудника
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            tdb.TableAddNewCashier("Кассир", fioTxtBox.Text, birthdayTxtBox.Text, Convert.ToInt32(ageTxtBox.Text), passportTxtBox.Text, telephoneTxtBox.Text, adressTxtBox.Text, emailTxtBox.Text, loginTxtBox.Text, passwordTxtBox.Text);
+            tdb.TableAddNewCashier("Кассир", fioTxtBox.Text, birthdayTxtBox.Text, 25, passportTxtBox.Text, telephoneTxtBox.Text, adressTxtBox.Text, emailTxtBox.Text, loginTxtBox.Text, passwordTxtBox.Text);
         }
 
         private void AddNewCashierGrid_Loaded(object sender, RoutedEventArgs e)

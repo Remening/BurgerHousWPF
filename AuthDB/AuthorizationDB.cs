@@ -19,7 +19,7 @@ namespace ConnectionBD
 {
     public class AuthorizationDB
     {
-        static readonly string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=BurgerHouse;" + "Integrated Security=true;";
+        static readonly string connectString = "Data Source=SQL8002.site4now.net;Initial Catalog=db_a88741_burgerhousewpf;User Id=db_a88741_burgerhousewpf_admin;Password=aohsdfpoasl23";
 
         public string AuthInDB(string login, string password)
         {
@@ -144,7 +144,7 @@ namespace ConnectionBD
 
     public class TableDB
     {
-        static readonly string connectString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=BurgerHouse;" + "Integrated Security=true;";
+        static readonly string connectString = "Data Source=SQL8002.site4now.net;Initial Catalog=db_a88741_burgerhousewpf;User Id=db_a88741_burgerhousewpf_admin;Password=aohsdfpoasl23";
 
         internal SqlDataAdapter adapter;
         internal DataTable usersTable;
