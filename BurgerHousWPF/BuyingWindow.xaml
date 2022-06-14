@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BurgerHousWPF"
         mc:Ignorable="d"
-        Title="Окно Покупки" Height="520" Width="559" ResizeMode="NoResize" Closed="Window_Closed" WindowStartupLocation="CenterScreen" Closing="Window_Closing" HorizontalContentAlignment="Stretch" SizeToContent="WidthAndHeight">
+        Title="Окно Покупки" Height="520" Width="559" ResizeMode="NoResize" Closed="Window_Closed" WindowStartupLocation="CenterScreen" Closing="Window_Closing" HorizontalContentAlignment="Stretch" SizeToContent="WidthAndHeight" Icon="/AlexBurgerIcon64X.ico">
     <Grid Background="#FF530FAD" Height="504">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="280*"/>
