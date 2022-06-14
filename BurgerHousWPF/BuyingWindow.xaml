@@ -12,7 +12,7 @@
             <ColumnDefinition Width="279*"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="burgerNameLabel" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="32" Width="539" Foreground="White" Height="53" Grid.ColumnSpan="2"/>
-        <Image x:Name="burgerImage" HorizontalAlignment="Left" Height="100" Margin="38,63,0,0" VerticalAlignment="Top" Width="170" Stretch="UniformToFill"/>
+        <Image x:Name="burgerImage" HorizontalAlignment="Left" Height="100" Margin="38,63,0,0" VerticalAlignment="Top" Width="170" Stretch="Uniform"/>
         <Label x:Name="dopIngrLabel" Content="Доп. ингредиенты" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top" FontSize="26" Foreground="White" Height="45" Width="227"/>
         <Label Content="Описание:" HorizontalAlignment="Right" Margin="0,68,145,0" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="42" Width="124" Grid.Column="1"/>
         <Button x:Name="addToCartsBtn" Content="Добавить в корзину" Margin="10,468,10,10" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="Button_Click"/>
@@ -34,7 +34,7 @@
             </Viewbox>
         </Button>
         <Label x:Name="burgerAmount" Content="Label" HorizontalAlignment="Center" Margin="0,403,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,223,0,0" TextWrapping="Wrap" Text="Ломтик Бекона + 25 руб." VerticalAlignment="Top" FontSize="22" Foreground="White" Width="270"/>
+        <TextBlock x:Name="bekonTxtBlock" HorizontalAlignment="Left" Margin="10,223,0,0" TextWrapping="Wrap" Text="Ломтик Бекона + 25 руб." VerticalAlignment="Top" FontSize="22" Foreground="White" Width="270"/>
         <Button x:Name="addBekon" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="addBekon_Click" Margin="10,257,234,210">
             <Viewbox>
                 <Grid Width="20" Height="20">

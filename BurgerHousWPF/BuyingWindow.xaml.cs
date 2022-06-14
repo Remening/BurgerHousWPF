@@ -27,7 +27,7 @@ namespace BurgerHousWPF
         int bekonCount, cheeseCount, allDopIngredient;
         string bekonIngredient, cheeseIngredient;
         int BurgerAmount = 1;
-        public BuyingWindow(int price, int BurgerCal, string BurgerDescription, ImageSource BurgerImage, string BurgerNameLabel)
+        public BuyingWindow(int price, int BurgerCal, string BurgerDescription, ImageSource BurgerImage, string BurgerNameLabel, bool isbruger)
         {
             //TODO Сделать кнопки добавление и убирание бургера работающими
             InitializeComponent();
@@ -39,6 +39,14 @@ namespace BurgerHousWPF
             fullBurgerPrice = price;
             addToCartsBtn.Content = $"Добавить в корзину - {burgerPrice}";
             burgerAmount.Content = BurgerAmount;
+            if(isbruger == false)
+            {
+                bekonTxtBlock.Visibility = Visibility.Collapsed;
+                addBekon.Visibility = Visibility.Collapsed;
+                bekonAmountLabel.Visibility = Visibility.Collapsed;
+                deleteBekon.Visibility = Visibility.Collapsed;
+                dopIngrLabel.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void Window_Closed(object sender, EventArgs e)

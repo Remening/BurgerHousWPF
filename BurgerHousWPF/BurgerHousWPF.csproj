@@ -157,9 +157,6 @@
     <Resource Include="buregImg\TrippleCheeseburger.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="buregImg\kisspng-whopper-hamburger-cheeseburger-burger-king-premium-fast-food-burger-5a725b35c699e9.5347042815174438938135.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AuthDB\ConnectionBD.csproj">
       <Project>{0e12bbba-76f1-43fa-8d15-63d4e722c9a6}</Project>
       <Name>ConnectionBD</Name>
@@ -170,6 +167,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="AlexBurgerIcon64X.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buregImg\5a34b8b475ef58.7736671015134045964831.png" />
+    <Resource Include="buregImg\kisspng-fizzy-drinks-diet-drink-carbonated-water-juice-soda-5ae1844f54e834.4533955115247289113478.png" />
+    <Resource Include="buregImg\kisspng-iced-coffee-cappuccino-milkshake-tea-iced-coffee-picture-material-5a88b30298c561.4853639315189081626258.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
