@@ -45,7 +45,7 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="burgersGrid" Visibility="Visible">
+            <Grid x:Name="burgersGrid" Visibility="Visible" d:IsHidden="True">
                 <Button x:Name="bigSandersBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,428,310" Click="bigSandersBtn_Click" Initialized="bigSandersBtn_Initialized">
                     <StackPanel x:Name="bigSandersStackPanel">
                         <Image x:Name="bigSandersImage" HorizontalAlignment="Left" Source="/BigSandersBurger.png"/>
@@ -117,38 +117,53 @@
                     </StackPanel>
                 </Button>
             </Grid>
-            <Grid x:Name="frenchFriesGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Collapsed" d:IsHidden="True">
-                <Button Grid.Column="0" Grid.Row="0" x:Name="frenchFriesBtn" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109" Click="frenchFriesBtn_Click"/>
-                <Button Grid.Row="0" x:Name="frenchFriesBtn1" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109" Click="frenchFriesBtn1_Click"/>
-                <Button Grid.Row="0" x:Name="frenchFriesBtn2" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109" Click="frenchFriesBtn2_Click"/>
-                <Button Grid.Row="0" x:Name="frenchFriesBtn3" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,0,112,109" Click="frenchFriesBtn3_Click"/>
-                <Button Grid.Row="0" x:Name="frenchFriesBtn4" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="446,0,0,109" Click="frenchFriesBtn4_Click"/>
-                <Button Grid.Column="0" x:Name="frenchFriesBtn5" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,108,446,0" Click="frenchFriesBtn5_Click"/>
-                <Button x:Name="frenchFriesBtn6" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,108,335,0" Click="frenchFriesBtn6_Click"/>
-                <Button x:Name="frenchFriesBtn7" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0" Click="frenchFriesBtn7_Click"/>
-                <Button x:Name="frenchFriesBtn8" Content="Картошка фри" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0" Click="frenchFriesBtn8_Click"/>
+            <Grid x:Name="frenchFriesGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
+                <Button x:Name="basketFriBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,428,310" Click="basketFriBtn_Click" Initialized="basketFriBtn_Initialized">
+                    <StackPanel x:Name="basketFriStackPanel">
+                        <Image x:Name="basketFriImage" HorizontalAlignment="Left" Source="/BigSandersBurger.png"/>
+                        <TextBlock x:Name="basketFriTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="priceBasketFriTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="friesBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="135,0,293,310" Click="friesBtn_Click" Initialized="friesBtn_Initialized">
+                    <StackPanel x:Name="friesStackPanel">
+                        <Image x:Name="friesImage" Source="/buregImg/TrippleCheeseburger.png" Stretch="UniformToFill" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="friesTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="priceFriesTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="SixNuggetsBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="270,0,158,310" Click="SixNuggetsBtn_Click" Initialized="SixNuggetsBtn_Initialized">
+                    <StackPanel x:Name="SixNuggetsPanel">
+                        <Image x:Name="SixNuggetsImage" HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <TextBlock x:Name="SixNuggetsTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextAlignment="Justify" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="priceSixNuggetsTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="405,0,23,310" Click="NozhkaBtn_Click" Initialized="NozhkaBtn_Initialized" Width="130">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly" Width="126" Height="70"/>
+                        <TextBlock x:Name="NozhkaNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="NozhkaPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
             </Grid>
             <Grid x:Name="cupGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Collapsed" d:IsHidden="True">
-                <Button Grid.Column="0" Grid.Row="0" x:Name="cupBtn" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109" Click="cupBtn_Click"/>
-                <Button Grid.Row="0" x:Name="cupBtn1" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109" Click="cupBtn1_Click"/>
-                <Button Grid.Row="0" x:Name="cupBtn2" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109" Click="cupBtn2_Click"/>
-                <Button Grid.Row="0" x:Name="cupBtn3" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,0,112,109" Click="cupBtn3_Click"/>
-                <Button Grid.Row="0" x:Name="cupBtn4" Content="Кофе" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="446,0,0,109" Click="cupBtn4_Click"/>
-                <Button Grid.Column="0" x:Name="cupBtn5" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,108,446,0" Click="cupBtn5_Click"/>
-                <Button x:Name="cupBtn6" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,108,335,0" Click="cupBtn6_Click"/>
-                <Button x:Name="cupBtn7" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0" Click="cupBtn7_Click"/>
-                <Button x:Name="cupBtn8" Content="Чай" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0" Click="cupBtn8_Click"/>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,428,310" Click="IceLateBtn_Click" Initialized="IceLateBtn_Initialized" Width="130">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly" Width="126" Height="70"/>
+                        <TextBlock x:Name="IceLateTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="IceLatePriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
             </Grid>
             <Grid x:Name="sodaGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible" d:IsHidden="True">
-                <Button Grid.Column="0" Grid.Row="0" x:Name="sodaBtn" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,446,109" Click="sodaBtn_Click"/>
-                <Button Grid.Row="0" x:Name="sodaBtn1" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,0,335,109" Click="sodaBtn1_Click"/>
-                <Button Grid.Row="0" x:Name="sodaBtn2" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,0,223,109" Click="sodaBtn2_Click"/>
-                <Button Grid.Row="0" x:Name="sodaBtn3" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,0,112,109" Click="sodaBtn3_Click"/>
-                <Button Grid.Row="0" x:Name="sodaBtn4" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="446,0,0,109" Click="sodaBtn4_Click"/>
-                <Button Grid.Column="0" x:Name="sodaBtn5" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="0,108,446,0" Click="sodaBtn5_Click"/>
-                <Button x:Name="sodaBtn6" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="112,108,335,0" Click="sodaBtn6_Click"/>
-                <Button x:Name="sodaBtn7" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="223,108,223,0" Click="sodaBtn7_Click"/>
-                <Button x:Name="sodaBtn8" Content="Лимонад" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Margin="335,108,112,0" Click="sodaBtn8_Click"/>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,428,310" Click="SevenUpBtn_Click" Initialized="SevenUpBtn_Initialized" Width="130">
+                    <StackPanel>
+                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly" Width="126" Height="70"/>
+                        <TextBlock x:Name="SevenUpTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="SevenUpPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </Button>
             </Grid>
             <Grid x:Name="basketGrid" Grid.ColumnSpan="5" Grid.RowSpan="4" Visibility="Visible" d:IsHidden="True">
                 <ListBox x:Name="basketListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FF530FAD" BorderBrush="{x:Null}" Foreground="White" Visibility="Visible" Margin="0,0,160,0" FontSize="24" SelectionChanged="basketListBox_SelectionChanged" />

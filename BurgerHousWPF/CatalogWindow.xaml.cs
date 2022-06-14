@@ -352,6 +352,76 @@ namespace BurgerHousWPF
             }
         }
 
+        private void basketFriBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(11);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), basketFriTxt.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void friesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(12);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), friesTxt.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void SixNuggetsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(18);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), SixNuggetsTxt.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void NozhkaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(20);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), NozhkaNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+        private void IceLateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(21);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), IceLateTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
+
+        private void SevenUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> ts = tdb.SelectBurger(39);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3]);
+            buyingWindow.ShowDialog();
+
+            if (buyingWindow.DialogResult == true)
+            {
+                AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), SevenUpTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
+            }
+        }
 
         private void AddToCart(int burgerPrice, int burgerAmount, string burgerName, string dopIngredient)
         {
@@ -481,5 +551,36 @@ namespace BurgerHousWPF
         {
             tdb.AddNamePriceBurger(ChiefburgerjuniorNameTxtBlock, ChiefburgerjuniorPriceTxtBlock, 10);
         }
+
+        private void basketFriBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(basketFriTxt, priceBasketFriTxt, 11);
+        }
+
+        private void friesBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(friesTxt, priceFriesTxt, 12);
+        }
+
+        private void SixNuggetsBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(SixNuggetsTxt, priceSixNuggetsTxt, 18);
+        }
+
+        private void NozhkaBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(NozhkaNameTxtBlock, NozhkaPriceTxtBlock, 20);
+        }
+
+        private void IceLateBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(IceLateTxtBlock, IceLatePriceTxtBlock, 21);
+        }
+
+        private void SevenUpBtn_Initialized(object sender, EventArgs e)
+        {
+            tdb.AddNamePriceBurger(SevenUpTxtBlock, SevenUpPriceTxtBlock, 39);
+        }
+
     }
 }
