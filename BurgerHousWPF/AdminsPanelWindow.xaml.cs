@@ -140,9 +140,7 @@ namespace BurgerHousWPF
         {
             if (dataPickerComboBox.Text.Equals(null) == false)
             {
-                string text = $"{tdb.OtchetZaDen(dataPickerComboBox.Text)}р за {dataPickerComboBox.Text}";
-
-                //MessageBox.Show(text);
+                string text = $"{tdb.OtchetZaDen(dataPickerComboBox.Text)}";
 
                 // Получить объект приложения Word.
 
@@ -170,38 +168,9 @@ namespace BurgerHousWPF
 
                     para.Range.InsertParagraphAfter();
 
-                // Добавим уравнения.
+                // Добавим текст.
 
                 para.Range.Text = $"Выручка за выбранный день составляет - {text}р.";
-
-
-                    //// Сохраним документ.
-
-                    //object filename = System.IO.Path.GetFullPath(
-
-                    //    System.IO.Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, ".. \\ ..")) +
-
-                    //    "\\ test.doc";
-
-                    //word_doc.SaveAs(ref filename, ref missing, ref missing,
-
-                    //    ref missing, ref missing, ref missing, ref missing,
-
-                    //    ref missing, ref missing, ref missing, ref missing,
-
-                    //    ref missing, ref missing, ref missing, ref missing,
-
-                    //    ref missing);
-
-
-                    //// Закрыть.
-
-                    //object save_changes = false;
-
-                    //word_doc.Close(ref save_changes, ref missing, ref missing);
-
-                    //word_app.Quit(ref save_changes, ref missing, ref missing);
-
             }
             else
             {

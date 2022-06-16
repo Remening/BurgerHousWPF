@@ -43,7 +43,7 @@
         </Grid>
         <Grid x:Name="ZakazGrid">
             <Button x:Name="backBtn_Copy" Content="Вернуться назад" HorizontalAlignment="Right" Margin="0,0,10,5" VerticalAlignment="Bottom" FontWeight="Normal" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Height="35" Click="backBtn_Click"/>
-            <DataGrid x:Name="zakaDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FF530FAD" Foreground="White" BorderBrush="{x:Null}" RowBackground="#FF330570" Margin="0,0,0,45" >
+            <DataGrid x:Name="zakaDataGrid" CellEditEnding="anyTableDataGrid_CellEditEnding" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FF530FAD" Foreground="White" BorderBrush="{x:Null}" RowBackground="#FF330570" Margin="0,0,0,45" >
                 <DataGrid.Resources>
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
                         <Setter Property="Background" Value="#FF530FAD" />

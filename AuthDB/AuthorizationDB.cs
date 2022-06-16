@@ -418,6 +418,7 @@ namespace ConnectionBD
         public DataView TableViewZakaHistory()
         {
             string query = $"Select НомерЗаказа, СодержаниеЗаказа, СостояниеЗаказа, СтоимостьЗаказа, ДатаЗаказа from Заказ";
+            //string query = $"Select * from Заказ";
             usersTable = new DataTable();
             SqlConnection connection = null;
 
@@ -690,8 +691,6 @@ namespace ConnectionBD
 
         public void UpdateDB()
         {
-            TableViewSotrudniki(true);
-            SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter);
             adapter.Update(usersTable);
         }
     }
