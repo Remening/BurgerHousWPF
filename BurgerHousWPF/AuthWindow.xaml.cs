@@ -40,7 +40,7 @@ namespace BurgerHousWPF
             }
             else if (role.Equals("Кассир"))
             {
-                CatalogWindow catalogWindow = new CatalogWindow();
+                CatalogWindow catalogWindow = new CatalogWindow(false);
                 this.Hide();
                 catalogWindow.Show();
             }
@@ -48,6 +48,7 @@ namespace BurgerHousWPF
             {
 
             }
+
             //string temp_login = LoginTxtBox.Text.Trim();
             //string temp_password = PasswordTxtBox.Password.Trim();
 

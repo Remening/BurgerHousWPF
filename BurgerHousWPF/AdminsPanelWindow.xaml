@@ -36,13 +36,39 @@
                 </DataGrid.Resources>
             </DataGrid>
         </Grid>
-        <Grid x:Name="MainGrid">
+        <Grid x:Name="MainGrid" d:IsHidden="True">
             <Button Content="Посмотреть таблицы из базы данных" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="Button_Click" Height="29" Width="320"/>
             <Button Content="Заказы" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="openZakazGridBtn" Height="29" Width="320"/>
-            <Button x:Name="amountFullZakBtn" Content="Отчет по сумме заказов за день" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="amountFullZakBtnBtn" Height="29" Width="320"/>
+            <Button x:Name="OpenClientCatalogBtn" Content="Открыть клиентское меню" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="OpenClientCatalogBtnClick" Height="29" Width="320"/>
         </Grid>
-        <Grid x:Name="ZakazGrid" Height="434" Width="800" d:IsHidden="True">
+        <Grid x:Name="ZakazGrid">
             <Button x:Name="backBtn_Copy" Content="Вернуться назад" HorizontalAlignment="Right" Margin="0,0,10,5" VerticalAlignment="Bottom" FontWeight="Normal" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Height="35" Click="backBtn_Click"/>
+            <DataGrid x:Name="zakaDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FF530FAD" Foreground="White" BorderBrush="{x:Null}" RowBackground="#FF330570" Margin="0,0,0,45" >
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                        <Setter Property="Background" Value="#FF530FAD" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                        <Setter Property="Margin" Value="-1,-1,0,0" />
+                        <Setter Property="Height" Value="28" />
+                        <Setter Property="Width" Value="auto"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                    <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                        <Setter Property="Background" Value="#FF530FAD" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                        <Setter Property="Margin" Value="-1,-1,-1,-1" />
+                        <Setter Property="Height" Value="28" />
+                        <Setter Property="Width" Value="auto"/>
+                    </Style>
+                </DataGrid.Resources>
+            </DataGrid>
+            <Button x:Name="viewZakaz" Content="Показать историю заказов" Margin="0,0,0,5" FontWeight="Normal" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="ViewZakaBtnClick" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="215"/>
+            <Button x:Name="otchetZakaz" Content="Отчет за день" Margin="220,0,0,5" FontWeight="Normal" Background="#FF330570" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="otchetZakaz_Click" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="215"/>
+            <ComboBox x:Name="dataPickerComboBox" HorizontalAlignment="Left" Margin="440,0,0,11" Width="120" Height="22" VerticalAlignment="Bottom"/>
         </Grid>
     </Grid>
 </Window>

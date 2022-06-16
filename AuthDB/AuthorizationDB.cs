@@ -415,6 +415,80 @@ namespace ConnectionBD
             return null;
         }
 
+        public DataView TableViewZakaHistory()
+        {
+            string query = $"Select НомерЗаказа, СодержаниеЗаказа, СостояниеЗаказа, СтоимостьЗаказа, ДатаЗаказа from Заказ";
+            usersTable = new DataTable();
+            SqlConnection connection = null;
+
+            try
+            {
+                connection = new SqlConnection(connectString);
+                SqlCommand command = new SqlCommand(query, connection);
+                adapter = new SqlDataAdapter(command);
+
+                connection.Open();
+                adapter.Fill(usersTable);
+                return usersTable.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+            return null;
+        }
+        //Select ДатаЗаказа from Заказ group by ДатаЗаказа order by ДатаЗаказа
+        public List<string> DataPicker()
+        {
+            List<string> dataPick = new List<string>();
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+                string query = $"Select ДатаЗаказа from Заказ group by ДатаЗаказа order by ДатаЗаказа";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        dataPick.Add(reader.GetDateTime(0).ToShortDateString().ToString());
+                    }
+                }
+
+                return dataPick;
+            }
+        }
+
+        //Select СтоимостьЗаказа from Заказ where ДатаЗаказа = '2022-01-01'
+
+        public int OtchetZaDen(string date)
+        {
+            int sumOtchet = 0; ;
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+                string query = $"Select СтоимостьЗаказа from Заказ where ДатаЗаказа = '{date}'";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        sumOtchet += reader.GetInt32(0);
+                    }
+                }
+
+                return sumOtchet;
+            }
+        }
+
         public DataView TableViewSotrudniki(bool st)
         {
             string query = $"select * from Кассир";
@@ -598,7 +672,7 @@ namespace ConnectionBD
                 return checkID;
             }
         }
-
+        
         public void AddNewZakaz(int idSotrudnika, int nomerZakaza,string infoZaka, int zakazPrice, string zakazDate)
         {
             infoZaka.Trim(); zakazDate.Trim();

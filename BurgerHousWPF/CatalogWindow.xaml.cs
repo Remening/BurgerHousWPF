@@ -24,10 +24,12 @@ namespace BurgerHousWPF
         Random rnd = new Random();
         int cartsItem = 0;
         internal int itogoPrice = 0;
-        public CatalogWindow()
+        bool CLients;
+        public CatalogWindow(bool clients)
         {
             InitializeComponent();
             itogoPriceLabel.Content = itogoPrice.ToString();
+            CLients = clients;
         }
         //Отображает каталог бургеров
         private void BurgersBtn_Click(object sender, RoutedEventArgs e)
@@ -81,14 +83,21 @@ namespace BurgerHousWPF
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult dialogResult = MessageBox.Show("Вы уверены, что хотите выйти?", "Подвердить", MessageBoxButton.YesNo);
-            if (dialogResult == MessageBoxResult.Yes)
+            if (CLients == false)
             {
-                Application.Current.Shutdown();
+                MessageBoxResult dialogResult = MessageBox.Show("Вы уверены, что хотите выйти?", "Подвердить", MessageBoxButton.YesNo);
+                if (dialogResult == MessageBoxResult.Yes)
+                {
+                    Application.Current.Shutdown();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
             else
             {
-                e.Cancel = true;
+                Environment.Exit(0);
             }
         }
 
@@ -461,18 +470,47 @@ namespace BurgerHousWPF
         {
             if (itogoPrice > 0)
             {
-                PaymentWindow paymentWindow = new PaymentWindow(itogoPrice);
-                paymentWindow.ShowDialog();
-                if(paymentWindow.DialogResult == false)
+                if (CLients == false)
                 {
+                    PaymentWindow paymentWindow = new PaymentWindow(itogoPrice);
+                    paymentWindow.ShowDialog();
+                    if (paymentWindow.DialogResult == false)
+                    {
 
+                    }
+                    else
+                    {
+                        string zakazName = ""; int zakazPrice = 0;
+                        foreach (var item in basketListBox.Items)
+                        {
+                            if (item.ToString().Contains("+") == true)
+                            {
+                                zakazName += $"{item.ToString().Split('-')[0].Trim()} {item.ToString().Split('+')[1]} ";
+                                zakazPrice += Convert.ToInt32(item.ToString().Split('-')[1].Split('+')[0].Split('Р')[0].Trim());
+                            }
+                            else
+                            {
+                                zakazName += item.ToString().Split('-')[0].Trim();
+                                zakazPrice += Convert.ToInt32(item.ToString().Split('-')[1].Split('Р')[0].Trim());
+                            }
+
+                        }
+                        tdb.AddNewZakaz(rnd.Next(0, 10), rnd.Next(000000, 999999), zakazName, Convert.ToInt32(zakazPrice), "2020-01-01");
+                        basketListBox.Items.Clear();
+                        itogoPriceLabel.Content = "0Р";
+                        cartsLabel.Content = 0;
+                        cartsItem = 0;
+                        itogoPrice = 0;
+                    }
                 }
                 else
                 {
+                    MessageBox.Show("Приложите карту для оплаты");
+
                     string zakazName = ""; int zakazPrice = 0;
                     foreach (var item in basketListBox.Items)
                     {
-                        if(item.ToString().Contains("+") == true)
+                        if (item.ToString().Contains("+") == true)
                         {
                             zakazName += $"{item.ToString().Split('-')[0].Trim()} {item.ToString().Split('+')[1]} ";
                             zakazPrice += Convert.ToInt32(item.ToString().Split('-')[1].Split('+')[0].Split('Р')[0].Trim());
@@ -482,7 +520,7 @@ namespace BurgerHousWPF
                             zakazName += item.ToString().Split('-')[0].Trim();
                             zakazPrice += Convert.ToInt32(item.ToString().Split('-')[1].Split('Р')[0].Trim());
                         }
-                        
+
                     }
                     tdb.AddNewZakaz(rnd.Next(0, 10), rnd.Next(000000, 999999), zakazName, Convert.ToInt32(zakazPrice), "2020-01-01");
                     basketListBox.Items.Clear();
