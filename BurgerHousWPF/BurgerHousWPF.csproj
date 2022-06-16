@@ -173,5 +173,17 @@
     <Resource Include="buregImg\kisspng-fizzy-drinks-diet-drink-carbonated-water-juice-soda-5ae1844f54e834.4533955115247289113478.png" />
     <Resource Include="buregImg\kisspng-iced-coffee-cappuccino-milkshake-tea-iced-coffee-picture-material-5a88b30298c561.4853639315189081626258.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buregImg\9vqa9w3figvmb9b9qh4machdcebi.png" />
+    <Resource Include="buregImg\etZVHiWewqH6XqEsShD4Axz9.png" />
+    <Resource Include="buregImg\Jtt1xXNpgBaXhvbXXgNzJCSo.png" />
+    <Resource Include="buregImg\k05jnlzwuhslbr2ilc80xfhlxg59.png" />
+    <Resource Include="buregImg\kvx0gh0u77jkmzed9k3gri561jtf.png" />
+    <Resource Include="buregImg\l2p6pk6wwed6ulbxeot1th413z9h.png" />
+    <Resource Include="buregImg\n3i4cyr0l02td6p8176830syt3qj.png" />
+    <Resource Include="buregImg\nyt79dy2gTrx5v595yXYuXAr.png" />
+    <Resource Include="buregImg\pgd13bpxbpzy8jjukx3o2bv7thca.png" />
+    <Resource Include="buregImg\X4eyRrugynKehEm2Wr8YEZeo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

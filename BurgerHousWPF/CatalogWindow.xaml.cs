@@ -227,15 +227,10 @@ namespace BurgerHousWPF
             cartsLabel.Content = $"{cartsItem += 1}";
         }
 
-        private void burgersAdd()
-        {
-
-        }
-
         private void bigSandersBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(1);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], bigSandersImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge1.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -247,7 +242,7 @@ namespace BurgerHousWPF
         private void bitTastyBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(2);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], bigTastyImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge2.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -259,7 +254,7 @@ namespace BurgerHousWPF
         private void TrippleCheeseburgerBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(3);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge3.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -271,7 +266,7 @@ namespace BurgerHousWPF
         private void SandersDeLuxBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(4);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge4.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -283,7 +278,7 @@ namespace BurgerHousWPF
         private void ChiefburgerDeLuxBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(5);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge5.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -295,7 +290,7 @@ namespace BurgerHousWPF
         private void ChiefburgerBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(6);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge6.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -307,7 +302,7 @@ namespace BurgerHousWPF
         private void CheeseburgerDeLuxNameBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(7);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge7.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -319,7 +314,7 @@ namespace BurgerHousWPF
         private void CheeseburgerBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(8);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge8.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -331,7 +326,7 @@ namespace BurgerHousWPF
         private void ChickenburgerrBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(9);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge9.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -343,7 +338,7 @@ namespace BurgerHousWPF
         private void ChiefburgerjuniorBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(10);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], TrippleCheeseburgerImage.Source, ts[3], true);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], burgerIamge10.Source, ts[3], true);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -399,6 +394,7 @@ namespace BurgerHousWPF
                 AddToCart(buyingWindow.NewBurgerPrice(), buyingWindow.NewAmountBurgers(), NozhkaNameTxtBlock.Text.Trim(), buyingWindow.NewDopIngredient());
             }
         }
+
         private void IceLateBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(21);

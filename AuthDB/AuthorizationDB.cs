@@ -329,7 +329,7 @@ namespace ConnectionBD
 
         public void TableAddNewCashier(string role, string fio, string birthday, int age, string passport, string telephone, string adress, string email, string login, string password)
         {
-            int id = LastCheckID("ID_Кассира","Кассир");
+            int id = LastCheckID("Кассир");
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 connection.Open();
@@ -442,6 +442,7 @@ namespace ConnectionBD
             }
             return null;
         }
+
         public DataView TableViewPovar()
         {
             string query = $"select Роль, ФИО, ДатаРождения, Возраст, ПаспортныеДанные, НомерТелефона, АдресПроживания, Email from Повары";
@@ -469,6 +470,7 @@ namespace ConnectionBD
             }
             return null;
         }
+
         public DataView TableViewFullMenu()
         {
             string query = $"select ТипПродукта, Название, Цена from Продукты";
@@ -574,14 +576,14 @@ namespace ConnectionBD
         }
         
         //INSERT INTO Заказ VALUES(11, 5, 234125, 'Сандерс', 'Готовится', 149, '2022-02-02');
-        public int LastCheckID(string Id, string table)
+        public int LastCheckID(string table)
         {
             int checkID = 0;
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 connection.Open();
 
-                string query = $"select {Id} from {table}";
+                string query = $"select * from {table}";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -596,10 +598,11 @@ namespace ConnectionBD
                 return checkID;
             }
         }
+
         public void AddNewZakaz(int idSotrudnika, int nomerZakaza,string infoZaka, int zakazPrice, string zakazDate)
         {
             infoZaka.Trim(); zakazDate.Trim();
-            int id = LastCheckID("ID_Заказа", "Заказ");
+            int id = LastCheckID("Заказ");
 
             using (SqlConnection connection = new SqlConnection(connectString))
             {

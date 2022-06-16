@@ -48,76 +48,76 @@
             <Grid x:Name="burgersGrid" Visibility="Visible" d:IsHidden="True">
                 <Button x:Name="bigSandersBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,428,310" Click="bigSandersBtn_Click" Initialized="bigSandersBtn_Initialized">
                     <StackPanel x:Name="bigSandersStackPanel">
-                        <Image x:Name="bigSandersImage" HorizontalAlignment="Left" Source="/BigSandersBurger.png"/>
+                        <Image x:Name="burgerIamge1" HorizontalAlignment="Left" Source="/buregImg/kvx0gh0u77jkmzed9k3gri561jtf.png" Stretch="Fill" Height="71"/>
                         <TextBlock x:Name="BigSandersTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"/>
                         <TextBlock x:Name="priceBigSandersTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button x:Name="bigTastyBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="135,0,293,310" Click="bitTastyBtn_Click">
                     <StackPanel x:Name="bigTastyStackPanel" Initialized="bigTastyStackPanel_Initialized">
-                        <Image x:Name="bigTastyImage" Source="/buregImg/TrippleCheeseburger.png" Stretch="UniformToFill" StretchDirection="DownOnly"/>
+                        <Image x:Name="burgerIamge2" Source="/buregImg/9vqa9w3figvmb9b9qh4machdcebi.png" Stretch="Fill" StretchDirection="Both" Height="71"/>
                         <TextBlock x:Name="bigTastyTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
                         <TextBlock x:Name="pricebigTastyTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="TrippleCheeseburgerBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="270,0,158,310" Click="TrippleCheeseburgerBtn_Click" Initialized="TrippleCheeseburgerBtn_Initialized">
                     <StackPanel x:Name="TrippleCheeseburgerPanel">
-                        <Image x:Name="TrippleCheeseburgerImage" HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <Image x:Name="burgerIamge3" HorizontalAlignment="Left" Source="/buregImg/etZVHiWewqH6XqEsShD4Axz9.png" Stretch="Fill" StretchDirection="Both" Width="126" Height="70"/>
                         <TextBlock x:Name="TrippleCheeseburgerTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextAlignment="Justify" TextWrapping="Wrap"/>
                         <TextBlock x:Name="priceTrippleCheeseburgerTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="405,0,23,310" Click="SandersDeLuxBtn_Click" Initialized="SandersDeLuxBtn_Initialized" Width="130">
                     <StackPanel>
-                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly" Width="126" Height="70"/>
+                        <Image x:Name="burgerIamge4" HorizontalAlignment="Left" Source="/buregImg/Jtt1xXNpgBaXhvbXXgNzJCSo.png" Stretch="Fill" StretchDirection="Both" Width="126" Height="70"/>
                         <TextBlock x:Name="SandersDeLuxNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
                         <TextBlock x:Name="SandersDeLuxPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,129,428,185" Click="ChiefburgerDeLuxBtn_Click" Initialized="ChiefburgerDeLuxBtn_Initialized" Height="124">
                     <StackPanel>
-                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <Image x:Name="burgerIamge5" HorizontalAlignment="Left" Source="/buregImg/k05jnlzwuhslbr2ilc80xfhlxg59.png" Stretch="Uniform" StretchDirection="DownOnly" Width="126" Height="71"/>
                         <TextBlock x:Name="ChiefburgerDeLuxNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" FontSize="11"></TextBlock>
                         <TextBlock x:Name="ChiefburgerDeLuxPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="135,129,293,181" Click="ChiefburgerBtn_Click" Initialized="ChiefburgerBtn_Initialized" Width="130" Height="124">
                     <StackPanel>
-                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <Image x:Name="burgerIamge6" HorizontalAlignment="Left" Source="/buregImg/X4eyRrugynKehEm2Wr8YEZeo.png" Stretch="Fill" StretchDirection="DownOnly" Width="126" Height="71"/>
                         <TextBlock x:Name="ChiefburgerNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
                         <TextBlock x:Name="ChiefburgerPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="270,129,158,181" Click="CheeseburgerDeLuxNameBtn_Click" Initialized="CheeseburgerDeLuxBtn_Initialized" Width="130" Height="124">
                     <StackPanel>
-                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <Image x:Name="burgerIamge7" HorizontalAlignment="Left" Source="/buregImg/pgd13bpxbpzy8jjukx3o2bv7thca.png" Stretch="Fill" StretchDirection="DownOnly" Width="126" Height="71"/>
                         <TextBlock x:Name="CheeseburgerDeLuxNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
                         <TextBlock x:Name="CheeseburgerDeLuxPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="405,129,23,181" Click="CheeseburgerBtn_Click" Initialized="CheeseburgerBtn_Initialized" Width="130" Height="124">
                     <StackPanel>
-                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <Image x:Name="burgerIamge8" HorizontalAlignment="Left" Source="/buregImg/n3i4cyr0l02td6p8176830syt3qj.png" Stretch="Uniform" StretchDirection="DownOnly" Height="71"/>
                         <TextBlock x:Name="CheeseburgerNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
                         <TextBlock x:Name="CheeseburgerPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="135,258,293,52" Click="ChickenburgerrBtn_Click" Initialized="ChickenburgerBtn_Initialized" Width="130" Height="124">
                     <StackPanel>
-                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <Image x:Name="burgerIamge9" HorizontalAlignment="Left" Source="/buregImg/BigTastyBurger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
                         <TextBlock x:Name="ChickenburgerNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
                         <TextBlock x:Name="ChickenburgerPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,258,428,54" Click="ChiefburgerjuniorBtn_Click" Initialized="ChiefburgerjuniorBtn_Initialized" Width="130" Height="122">
                     <StackPanel>
-                        <Image HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Uniform" StretchDirection="DownOnly"/>
+                        <Image x:Name="burgerIamge10" HorizontalAlignment="Left" Source="/buregImg/TrippleCheeseburger.png" Stretch="Fill" StretchDirection="DownOnly" Height="71" Width="126"/>
                         <TextBlock x:Name="ChiefburgerjuniorNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center"></TextBlock>
                         <TextBlock x:Name="ChiefburgerjuniorPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
             </Grid>
-            <Grid x:Name="frenchFriesGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible" d:IsHidden="True">
+            <Grid x:Name="frenchFriesGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
                 <Button x:Name="basketFriBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,428,310" Click="basketFriBtn_Click" Initialized="basketFriBtn_Initialized">
                     <StackPanel x:Name="basketFriStackPanel">
                         <Image x:Name="basketFriImage" HorizontalAlignment="Left" Source="/buregImg/5a34b8b475ef58.7736671015134045964831.png" Stretch="Fill" Height="71"/>
@@ -156,7 +156,7 @@
                     </StackPanel>
                 </Button>
             </Grid>
-            <Grid x:Name="sodaGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible">
+            <Grid x:Name="sodaGrid" Grid.ColumnSpan="5" Grid.RowSpan="2" Visibility="Visible" d:IsHidden="True">
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,428,310" Click="SevenUpBtn_Click" Initialized="SevenUpBtn_Initialized" Width="130">
                     <StackPanel>
                         <Image x:Name="SevenUpImg" Source="/buregImg/kisspng-fizzy-drinks-diet-drink-carbonated-water-juice-soda-5ae1844f54e834.4533955115247289113478.png" Stretch="Uniform" StretchDirection="DownOnly" Width="126" Height="70"/>
