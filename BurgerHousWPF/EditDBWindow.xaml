@@ -36,7 +36,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="10,64,0,0" TextWrapping="Wrap" Text="ФИО" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
             <TextBox x:Name="fioUpdateTxtBox" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="#FF996AD6" BorderBrush="{x:Null}" CaretBrush="White" Width="260" FontSize="16"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
-            <TextBox x:Name="birthUpdatedayTxtBox" HorizontalAlignment="Left" Margin="10,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="#FF996AD6" BorderBrush="{x:Null}" CaretBrush="White" Width="260" FontSize="16"/>
+            <TextBox x:Name="birthUpdatedayTxtBox" HorizontalAlignment="Left" Margin="10,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="#FF996AD6" BorderBrush="{x:Null}" CaretBrush="White" Width="260" FontSize="16" TextChanged="birthUpdatedayTxtBox_TextChanged"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,172,0,0" TextWrapping="Wrap" Text="Возраст" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
             <TextBlock x:Name="ageUpdateTxtBox" HorizontalAlignment="Left" Margin="10,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="119"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,224,0,0" TextWrapping="Wrap" Text="Паспортные данные" VerticalAlignment="Top" Foreground="White" FontSize="16"/>

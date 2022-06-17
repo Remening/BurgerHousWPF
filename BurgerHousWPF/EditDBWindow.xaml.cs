@@ -64,6 +64,23 @@ namespace BurgerHousWPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             tdb.TableAddNewCashier("Кассир", fioTxtBox.Text, birthdayTxtBox.Text, 25, passportTxtBox.Text, telephoneTxtBox.Text, adressTxtBox.Text, emailTxtBox.Text, loginTxtBox.Text, passwordTxtBox.Text);
+            this.Close();
+        }
+
+        private void birthUpdatedayTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //try
+            //{
+            //    int age = 2022 - Convert.ToInt32(birthdayTxtBox.Text.Split('-')[0]);
+            //    if (age < 18)
+            //        MessageBox.Show("Введите возраст старше");
+            //    else
+            //        ageTxtBox.Text = $"{age}";
+            //}
+            //catch (Exception)
+            //{
+
+            //}
         }
 
         private void AddNewCashierGrid_Loaded(object sender, RoutedEventArgs e)

@@ -127,21 +127,21 @@
                 </Button>
                 <Button x:Name="friesBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="135,0,293,310" Click="friesBtn_Click" Initialized="friesBtn_Initialized">
                     <StackPanel x:Name="friesStackPanel">
-                        <Image x:Name="friesImage" Source="/buregImg/5a34b8b475ef58.7736671015134045964831.png" Stretch="Fill" Height="71"/>
+                        <Image x:Name="friesImage" Source="/buregImg/fries.png" Stretch="Fill" Height="71"/>
                         <TextBlock x:Name="friesTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
                         <TextBlock x:Name="priceFriesTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="SixNuggetsBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="270,0,158,310" Click="SixNuggetsBtn_Click" Initialized="SixNuggetsBtn_Initialized">
                     <StackPanel x:Name="SixNuggetsPanel">
-                        <Image x:Name="SixNuggetsImage" HorizontalAlignment="Left" Source="/buregImg/5a34b8b475ef58.7736671015134045964831.png" Stretch="Fill" Height="71"/>
+                        <Image x:Name="SixNuggetsImage" HorizontalAlignment="Left" Source="/buregImg/nagets.png" Stretch="Fill" Height="71"/>
                         <TextBlock x:Name="SixNuggetsTxt" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextAlignment="Justify" TextWrapping="Wrap"/>
                         <TextBlock x:Name="priceSixNuggetsTxt" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="405,0,23,310" Click="NozhkaBtn_Click" Initialized="NozhkaBtn_Initialized" Width="130">
                     <StackPanel>
-                        <Image HorizontalAlignment="Left" Source="/buregImg/5a34b8b475ef58.7736671015134045964831.png" Stretch="Fill" Height="71"/>
+                        <Image x:Name="chickenImg" HorizontalAlignment="Left" Source="/buregImg/chicken.png" Stretch="Fill" Height="71"/>
                         <TextBlock x:Name="NozhkaNameTxtBlock" Foreground="White" Margin="0,5,0,0" HorizontalAlignment="Center" TextWrapping="Wrap"/>
                         <TextBlock x:Name="NozhkaPriceTxtBlock" Foreground="White" HorizontalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>

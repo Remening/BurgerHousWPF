@@ -188,5 +188,11 @@
     <Resource Include="buregImg\pgd13bpxbpzy8jjukx3o2bv7thca.png" />
     <Resource Include="buregImg\X4eyRrugynKehEm2Wr8YEZeo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buregImg\basketfrie.png" />
+    <Resource Include="buregImg\chicken.png" />
+    <Resource Include="buregImg\fries.png" />
+    <Resource Include="buregImg\nagets.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -359,7 +359,7 @@ namespace BurgerHousWPF
         private void basketFriBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(11);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], friesImage.Source, ts[3], false);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], basketFriImage.Source, ts[3], false);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -383,7 +383,7 @@ namespace BurgerHousWPF
         private void SixNuggetsBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(18);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], friesImage.Source, ts[3], false);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], SixNuggetsImage.Source, ts[3], false);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
@@ -395,7 +395,7 @@ namespace BurgerHousWPF
         private void NozhkaBtn_Click(object sender, RoutedEventArgs e)
         {
             List<string> ts = tdb.SelectBurger(20);
-            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], friesImage.Source, ts[3], false);
+            BuyingWindow buyingWindow = new BuyingWindow(Convert.ToInt32(ts[0]), Convert.ToInt32(ts[1]), ts[2], chickenImg.Source, ts[3], false);
             buyingWindow.ShowDialog();
 
             if (buyingWindow.DialogResult == true)
